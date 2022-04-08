@@ -683,8 +683,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1323055655}
   - component: {fileID: 1323055656}
-  - component: {fileID: 1323055657}
   - component: {fileID: 1323055658}
+  - component: {fileID: 1323055657}
   m_Layer: 0
   m_Name: DoomPlayer
   m_TagString: Untagged
@@ -700,7 +700,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1323055654}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.03, y: -0.05, z: 0}
+  m_LocalPosition: {x: 0.03, y: -0.19, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1622085706}
@@ -725,8 +725,8 @@ MonoBehaviour:
   playerRigidbody: {fileID: 1323055658}
   weaponsArm: {fileID: 586607205}
   movementSpeed: 5
---- !u!70 &1323055657
-CapsuleCollider2D:
+--- !u!61 &1323055657
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -738,9 +738,19 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.08018452, y: -0.9087577}
-  m_Size: {x: 1.2662076, y: 1.2662077}
-  m_Direction: 0
+  m_Offset: {x: -0.06018555, y: -0.72222614}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.1805565, y: 0.9398145}
+  m_EdgeRadius: 0
 --- !u!50 &1323055658
 Rigidbody2D:
   serializedVersion: 4
