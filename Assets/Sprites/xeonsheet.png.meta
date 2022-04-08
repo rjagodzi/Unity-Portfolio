@@ -7,19 +7,19 @@ TextureImporter:
     second: xeonsheet_0
   - first:
       213: -4259354950119962744
-    second: xeonsheet_1
+    second: Torpedo3
   - first:
       213: 2306385811194634109
-    second: xeonsheet_2
+    second: Torpedo4
   - first:
       213: -4444411309317236374
-    second: xeonsheet_3
+    second: Torpedo5
   - first:
       213: 7251879425774657364
-    second: xeonsheet_4
+    second: Torpedo6
   - first:
       213: 6684611383159578179
-    second: xeonsheet_5
+    second: Torpedo7
   - first:
       213: 1034040939125262217
     second: Idle 1
@@ -31,7 +31,7 @@ TextureImporter:
     second: Idle 3
   - first:
       213: -1778050358226321327
-    second: xeonsheet_9
+    second: Torpedo2
   - first:
       213: 6739569152289330972
     second: xeonsheet_10
@@ -46,16 +46,16 @@ TextureImporter:
     second: xeonsheet_13
   - first:
       213: 4972416749011671253
-    second: xeonsheet_14
+    second: Walking1
   - first:
       213: -7579050832861529037
-    second: xeonsheet_15
+    second: Walking2
   - first:
       213: -7414466299000190349
-    second: xeonsheet_16
+    second: Walking3
   - first:
       213: 5733711772375650643
-    second: xeonsheet_17
+    second: Walking4
   - first:
       213: -1207430518675846819
     second: xeonsheet_18
@@ -70,7 +70,7 @@ TextureImporter:
     second: xeonsheet_21
   - first:
       213: 8868564055018414265
-    second: xeonsheet_22
+    second: Torpedo1
   - first:
       213: -412780276446651725
     second: xeonsheet_23
@@ -313,7 +313,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: xeonsheet_1
+      name: Torpedo3
       rect:
         serializedVersion: 2
         x: 129
@@ -334,10 +334,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: xeonsheet_2
+      name: Torpedo4
       rect:
         serializedVersion: 2
-        x: 186
+        x: 185
         y: 513
         width: 50
         height: 64
@@ -355,7 +355,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: xeonsheet_3
+      name: Torpedo5
       rect:
         serializedVersion: 2
         x: 242
@@ -376,7 +376,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: xeonsheet_4
+      name: Torpedo6
       rect:
         serializedVersion: 2
         x: 322
@@ -397,7 +397,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: xeonsheet_5
+      name: Torpedo7
       rect:
         serializedVersion: 2
         x: 387
@@ -481,11 +481,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: xeonsheet_9
+      name: Torpedo2
       rect:
         serializedVersion: 2
-        x: 67
-        y: 513
+        x: 66
+        y: 512
         width: 41
         height: 64
       alignment: 0
@@ -502,13 +502,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: xeonsheet_14
+      name: Walking1
       rect:
         serializedVersion: 2
-        x: 18
+        x: 31
         y: 591
-        width: 68
-        height: 68
+        width: 44
+        height: 66
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -523,13 +523,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: xeonsheet_15
+      name: Walking2
       rect:
         serializedVersion: 2
-        x: 101
-        y: 591
-        width: 67
-        height: 67
+        x: 115
+        y: 589
+        width: 38
+        height: 66
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -544,16 +544,16 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: xeonsheet_16
+      name: Walking3
       rect:
         serializedVersion: 2
-        x: 176
-        y: 591
-        width: 68
-        height: 70
+        x: 187
+        y: 589
+        width: 48
+        height: 66
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 1, z: 1, w: 2}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -565,13 +565,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: xeonsheet_17
+      name: Walking4
       rect:
         serializedVersion: 2
-        x: 253
-        y: 591
-        width: 67
-        height: 67
+        x: 263
+        y: 590
+        width: 43
+        height: 66
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -586,7 +586,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: xeonsheet_22
+      name: Torpedo1
       rect:
         serializedVersion: 2
         x: 18
