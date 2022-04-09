@@ -19,6 +19,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] GameObject bullet;
     [SerializeField] Transform firePoint;
 
+    [SerializeField] float timeBetweenShots;
+    private float shotCounter = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -78,6 +81,17 @@ public class PlayerController : MonoBehaviour
         {
             // Instantiate the projectile at the position and rotation of this transform
             Instantiate(bullet, firePoint.position, firePoint.rotation);
+        }
+
+        if (Input.GetMouseButton(0))
+        {
+            shotCounter -= Time.deltaTime;
+
+            if(shotCounter <= 0)
+            {
+                Instantiate(bullet, firePoint.position, firePoint.rotation);
+                shotCounter = timeBetweenShots;
+            }
         }
 
     }
