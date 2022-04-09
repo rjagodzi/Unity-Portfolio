@@ -16,6 +16,9 @@ public class PlayerController : MonoBehaviour
 
     private Animator playerAnimator;
 
+    [SerializeField] GameObject bullet;
+    [SerializeField] Transform firePoint;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -69,6 +72,12 @@ public class PlayerController : MonoBehaviour
         {
             playerAnimator.SetBool("isMoving", false);
 
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            // Instantiate the projectile at the position and rotation of this transform
+            Instantiate(bullet, firePoint.position, firePoint.rotation);
         }
 
     }

@@ -5,7 +5,9 @@ using UnityEngine;
 public class PlayerBulletController : MonoBehaviour
 {
     [SerializeField] float bulletSpeed = 5f;
+
     private Rigidbody2D bulletRigidbody;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +17,7 @@ public class PlayerBulletController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //transform.right enables the bullet to travel along its red axis
         bulletRigidbody.velocity = transform.right * bulletSpeed;
     }
 
