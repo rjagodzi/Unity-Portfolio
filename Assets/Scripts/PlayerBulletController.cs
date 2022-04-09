@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class PlayerBulletController : MonoBehaviour
 {
+    [SerializeField] GameObject bulletImpactEffect;
     [SerializeField] float bulletSpeed = 5f;
 
     private Rigidbody2D bulletRigidbody;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +25,7 @@ public class PlayerBulletController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Instantiate(bulletImpactEffect, transform.position, transform.rotation);
         Destroy(gameObject);
     }
 
