@@ -30,6 +30,8 @@ public class PlayerController : MonoBehaviour
         movementInput.x = Input.GetAxisRaw("Horizontal");
         movementInput.y = Input.GetAxisRaw("Vertical");
 
+        movementInput.Normalize();
+
         //the method below is not sufficient - it causes jittering when coliding with walls
         //transform.position += new Vector3(movementInput.x, movementInput.y, 0f) * movementSpeed * Time.deltaTime;
 
