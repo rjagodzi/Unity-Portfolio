@@ -30,6 +30,8 @@ public class PlayerController : MonoBehaviour
         movementInput.x = Input.GetAxisRaw("Horizontal");
         movementInput.y = Input.GetAxisRaw("Vertical");
 
+        //nomralizing movement input ensures that the magnitude of diagonal movement is the same as vertical and horizontal movements
+
         movementInput.Normalize();
 
         //the method below is not sufficient - it causes jittering when coliding with walls
@@ -45,6 +47,8 @@ public class PlayerController : MonoBehaviour
         float angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg;
 
         weaponsArm.rotation = Quaternion.Euler(0, 0, angle);
+
+        //if statement for turning the player and weaponArm sprites left or right depending on the mouse position
 
         if(mousePosition.x < screenPoint.x)
         {
