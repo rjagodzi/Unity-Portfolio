@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 184673790560968680}
   - component: {fileID: 184673790560968681}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 184673790749636648}
   - component: {fileID: 184673790749636649}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +173,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 184673791416075449}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WeaponArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,7 +206,7 @@ GameObject:
   m_Component:
   - component: {fileID: 184673791813993480}
   - component: {fileID: 184673791813993481}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Shotgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -291,7 +291,8 @@ GameObject:
   - component: {fileID: 184673791883138294}
   - component: {fileID: 184673791883138293}
   - component: {fileID: 184673791883138295}
-  m_Layer: 0
+  - component: {fileID: -7880487757273405075}
+  m_Layer: 6
   m_Name: DoomPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -331,6 +332,9 @@ MonoBehaviour:
   playerRigidbody: {fileID: 184673791883138294}
   weaponsArm: {fileID: 184673791416075449}
   movementSpeed: 5
+  bullet: {fileID: 0}
+  firePoint: {fileID: 0}
+  timeBetweenShots: 0.2
 --- !u!50 &184673791883138294
 Rigidbody2D:
   serializedVersion: 4
@@ -397,6 +401,32 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!61 &-7880487757273405075
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184673791883138298}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.15186322, y: -0.039616466}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.93397236, y: 2.3205497}
+  m_EdgeRadius: 0
 --- !u!1 &184673792528219796
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,7 +437,7 @@ GameObject:
   m_Component:
   - component: {fileID: 184673792528219798}
   - component: {fileID: 184673792528219797}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -488,7 +518,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1540233453414774640}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
