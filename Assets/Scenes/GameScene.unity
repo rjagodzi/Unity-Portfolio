@@ -169,8 +169,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d04828679ba13d745bc0af7f06e51f01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeed: 5
-  playerChaseRange: 7
+  enemySpeed: 2
+  playerChaseRange: 3.5
+  keepChasingRange: 5.54
 --- !u!61 &75509636
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -217,7 +218,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -591,6 +592,10 @@ PrefabInstance:
     - target: {fileID: 184673791883138292, guid: 4fba0f2a113e726408e37612fb4dffe1, type: 3}
       propertyPath: timeBetweenShots
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 184673791883138294, guid: 4fba0f2a113e726408e37612fb4dffe1, type: 3}
+      propertyPath: m_Constraints
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 184673791883138298, guid: 4fba0f2a113e726408e37612fb4dffe1, type: 3}
       propertyPath: m_Name

@@ -334,6 +334,7 @@ MonoBehaviour:
   movementSpeed: 5
   bullet: {fileID: 0}
   firePoint: {fileID: 0}
+  isWeaponAutomatic: 0
   timeBetweenShots: 0.2
 --- !u!50 &184673791883138294
 Rigidbody2D:
@@ -355,7 +356,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &184673791883138293
 BoxCollider2D:
   m_ObjectHideFlags: 0
