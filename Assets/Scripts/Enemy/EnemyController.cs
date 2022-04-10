@@ -6,6 +6,7 @@ public class EnemyController : MonoBehaviour
 {
 
     [SerializeField] float enemySpeed;
+    [SerializeField] int enemyHealth = 100;
     private Rigidbody2D enemyRigidBody;
 
     [SerializeField] float playerChaseRange;
@@ -15,11 +16,15 @@ public class EnemyController : MonoBehaviour
 
     private Transform playerToChase;
 
+    private Animator enemyAnimator;
+
     // Start is called before the first frame update
     void Start()
     {
         enemyRigidBody = GetComponent<Rigidbody2D>();
         playerToChase = FindObjectOfType<PlayerController>().transform;
+
+        enemyAnimator = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -42,6 +47,35 @@ public class EnemyController : MonoBehaviour
 
         directionToMoveIn.Normalize();
         enemyRigidBody.velocity = directionToMoveIn * enemySpeed;
+
+        if(directionToMoveIn != Vector3.zero)
+        {
+            enemyAnimator.SetBool("isWalking", true);
+        }
+        else
+        {
+            enemyAnimator.SetBool("isWalking", false);
+        }
+
+        if(playerToChase.position.x < transform.position.x)
+        {
+            transform.localScale = new Vector3(-1f, 1f, 1f);
+        }
+        else
+        {
+            transform.localScale = Vector3.one;
+        }
+    }
+
+    public void DamageEnemy(int damageTaken)
+    {
+        enemyHealth -= damageTaken;
+
+        if(enemyHealth <= 0)
+        {
+
+            Destroy(gameObject);
+        }
     }
 
     private void OnDrawGizmosSelected()

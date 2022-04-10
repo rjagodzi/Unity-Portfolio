@@ -6,6 +6,7 @@ public class PlayerBulletController : MonoBehaviour
 {
     [SerializeField] GameObject bulletImpactEffect;
     [SerializeField] float bulletSpeed = 5f;
+    [SerializeField] int damageAmmount = 10;
 
     private Rigidbody2D bulletRigidbody;
     
@@ -26,6 +27,12 @@ public class PlayerBulletController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Instantiate(bulletImpactEffect, transform.position, transform.rotation);
+
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            collision.GetComponent<EnemyController>().DamageEnemy(damageAmmount);
+        }
+        
         Destroy(gameObject);
     }
 
