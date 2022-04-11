@@ -173,6 +173,7 @@ MonoBehaviour:
   enemyHealth: 100
   playerChaseRange: 3.5
   keepChasingRange: 5.54
+  bloodSplatter: {fileID: 8564112537919507777, guid: 668dbc8f43ae960458dcfda04ff185ec, type: 3}
 --- !u!61 &75509636
 BoxCollider2D:
   m_ObjectHideFlags: 0
