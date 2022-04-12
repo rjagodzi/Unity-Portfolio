@@ -175,7 +175,7 @@ MonoBehaviour:
   playerChaseRange: 3.5
   keepChasingRange: 5.54
   meleeAttack: 0
-  enemyProjectile: {fileID: 2677545540902286048, guid: 59123e0347bae694b949e4c23820c972, type: 3}
+  enemyProjectile: {fileID: 2685074504302671078, guid: 31a2eb1eb66e4604da7bd843a15f1360, type: 3}
   firePosition: {fileID: 321353594}
   timeBetweenShots: 1
   deathSplatter: {fileID: 8564112537919507777, guid: 668dbc8f43ae960458dcfda04ff185ec, type: 3}
@@ -657,6 +657,10 @@ PrefabInstance:
     - target: {fileID: 184673791883138298, guid: 4fba0f2a113e726408e37612fb4dffe1, type: 3}
       propertyPath: m_Name
       value: DoomPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 184673791883138298, guid: 4fba0f2a113e726408e37612fb4dffe1, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 184673791883138299, guid: 4fba0f2a113e726408e37612fb4dffe1, type: 3}
       propertyPath: m_RootOrder
