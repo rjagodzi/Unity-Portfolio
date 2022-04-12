@@ -17,6 +17,15 @@ public class EnemyController : MonoBehaviour
     private Transform playerToChase;
 
     private Animator enemyAnimator;
+
+    [SerializeField] bool meleeAttack;
+
+    [SerializeField] GameObject enemyProjectile;
+    [SerializeField] Transform firePosition;
+
+    [SerializeField] float timeBetweenShots;
+    private bool readyToShoot;
+
     [SerializeField] GameObject deathSplatter;
     //[SerializeField] GameObject impactSplatter;
 
@@ -27,6 +36,7 @@ public class EnemyController : MonoBehaviour
         playerToChase = FindObjectOfType<PlayerController>().transform;
 
         enemyAnimator = GetComponentInChildren<Animator>();
+        readyToShoot = true;
     }
 
     // Update is called once per frame
@@ -67,6 +77,21 @@ public class EnemyController : MonoBehaviour
         {
             transform.localScale = Vector3.one;
         }
+
+        if(!meleeAttack && readyToShoot)
+        {
+            readyToShoot = false;
+            StartCoroutine(FireEnemyProjectile());
+        }
+    }
+
+    //a Coroutine - suspends an instruction until certain conditions are met
+    IEnumerator FireEnemyProjectile()
+    {
+        yield return new WaitForSeconds(timeBetweenShots);
+
+        Instantiate(enemyProjectile, firePosition.position, firePosition.rotation);
+        readyToShoot = true;
     }
 
     public void DamageEnemy(int damageTaken)
