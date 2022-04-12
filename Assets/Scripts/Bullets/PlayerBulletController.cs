@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerBulletController : MonoBehaviour
 {
     [SerializeField] GameObject bulletImpactEffect;
+    [SerializeField] GameObject[] damageEffects;
     [SerializeField] float bulletSpeed = 5f;
     [SerializeField] int damageAmmount = 10;
 
@@ -26,11 +27,17 @@ public class PlayerBulletController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Instantiate(bulletImpactEffect, transform.position, transform.rotation);
 
         if (collision.gameObject.CompareTag("Enemy"))
         {
+            int randomSplash = Random.Range(0, damageEffects.Length);
+
+            Instantiate(damageEffects[randomSplash], transform.position, transform.rotation);
             collision.GetComponent<EnemyController>().DamageEnemy(damageAmmount);
+        }
+        else
+        {
+            Instantiate(bulletImpactEffect, transform.position, transform.rotation);
         }
         
         Destroy(gameObject);
