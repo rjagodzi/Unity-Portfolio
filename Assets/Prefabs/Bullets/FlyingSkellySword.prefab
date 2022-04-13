@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2685074504302671074}
   - component: {fileID: 2685074504302671101}
   - component: {fileID: -7172082328345743742}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FlyingSkellySword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
