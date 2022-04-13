@@ -9,8 +9,9 @@ public class EnemyController : MonoBehaviour
     [SerializeField] int enemyHealth = 100;
     private Rigidbody2D enemyRigidBody;
 
-    [SerializeField] float playerChaseRange;
+    [SerializeField] float chasePlayerRange;
     [SerializeField] float keepChasingRange;
+    [SerializeField] float shootPlayerRange;
     private Vector3 directionToMoveIn;
     private bool isChasing;
 
@@ -42,7 +43,48 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Vector3.Distance(transform.position, playerToChase.position) < playerChaseRange)
+        EnemyChasingPlayer();
+        EnemyWalkAnimation();
+        EnemyTurningTowardsPlayer();
+        EnemyShootingPlayer();
+    }
+
+    private void EnemyShootingPlayer()
+    {
+        if (!meleeAttack && readyToShoot && Vector3.Distance(playerToChase.transform.position, transform.position) < shootPlayerRange)
+        {
+            readyToShoot = false;
+            StartCoroutine(FireEnemyProjectile());
+        }
+    }
+
+    private void EnemyTurningTowardsPlayer()
+    {
+        if (playerToChase.position.x < transform.position.x)
+        {
+            transform.localScale = new Vector3(-1f, 1f, 1f);
+        }
+        else
+        {
+            transform.localScale = Vector3.one;
+        }
+    }
+
+    private void EnemyWalkAnimation()
+    {
+        if (directionToMoveIn != Vector3.zero)
+        {
+            enemyAnimator.SetBool("isWalking", true);
+        }
+        else
+        {
+            enemyAnimator.SetBool("isWalking", false);
+        }
+    }
+
+    private void EnemyChasingPlayer()
+    {
+        if (Vector3.Distance(transform.position, playerToChase.position) < chasePlayerRange)
         {
             isChasing = true;
             directionToMoveIn = playerToChase.position - transform.position;
@@ -59,30 +101,6 @@ public class EnemyController : MonoBehaviour
 
         directionToMoveIn.Normalize();
         enemyRigidBody.velocity = directionToMoveIn * enemySpeed;
-
-        if(directionToMoveIn != Vector3.zero)
-        {
-            enemyAnimator.SetBool("isWalking", true);
-        }
-        else
-        {
-            enemyAnimator.SetBool("isWalking", false);
-        }
-
-        if(playerToChase.position.x < transform.position.x)
-        {
-            transform.localScale = new Vector3(-1f, 1f, 1f);
-        }
-        else
-        {
-            transform.localScale = Vector3.one;
-        }
-
-        if(!meleeAttack && readyToShoot)
-        {
-            readyToShoot = false;
-            StartCoroutine(FireEnemyProjectile());
-        }
     }
 
     //a Coroutine - suspends an instruction until certain conditions are met
@@ -110,9 +128,11 @@ public class EnemyController : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, playerChaseRange);
+        Gizmos.DrawWireSphere(transform.position, chasePlayerRange);
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, keepChasingRange);
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, shootPlayerRange);
 
     }
 }
