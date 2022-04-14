@@ -46,10 +46,10 @@ public class EnemyController : MonoBehaviour
         EnemyChasingPlayer();
         EnemyWalkAnimation();
         EnemyTurningTowardsPlayer();
-        EnemyShootingPlayer();
+        EnemyShootingPlayerWhenInRange();
     }
 
-    private void EnemyShootingPlayer()
+    private void EnemyShootingPlayerWhenInRange()
     {
         if (!meleeAttack && readyToShoot && Vector3.Distance(playerToChase.transform.position, transform.position) < shootPlayerRange)
         {
