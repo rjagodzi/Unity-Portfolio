@@ -45959,9 +45959,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7956888934484343120, guid: 9102b8c16e84f8b4ab43617ccdc3087a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7956888934484343121, guid: 9102b8c16e84f8b4ab43617ccdc3087a, type: 3}
+      propertyPath: m_Alpha
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7956888934484343123, guid: 9102b8c16e84f8b4ab43617ccdc3087a, type: 3}
+      propertyPath: m_CullTransparentMesh
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7956888935109504656, guid: 9102b8c16e84f8b4ab43617ccdc3087a, type: 3}
       propertyPath: m_Name
       value: UICanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7956888935109504656, guid: 9102b8c16e84f8b4ab43617ccdc3087a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7956888935109504660, guid: 9102b8c16e84f8b4ab43617ccdc3087a, type: 3}
       propertyPath: m_Pivot.x
@@ -46045,6 +46061,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7956888935109504660, guid: 9102b8c16e84f8b4ab43617ccdc3087a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7956888935109504661, guid: 9102b8c16e84f8b4ab43617ccdc3087a, type: 3}
+      propertyPath: m_SortingOrder
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

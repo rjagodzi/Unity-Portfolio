@@ -23,12 +23,19 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float timeBetweenShots;
     private float shotCounter = 0;
 
+    private float currentMovmentSpeed;
+    private bool canDash;
+
+    [SerializeField] float dashSpeed = 16f, dashLength = 0.5f, dashCooldown = 1f;
+
     // Start is called before the first frame update
     void Start()
     {
         mainCamera = Camera.main;
 
         playerAnimator = GetComponent<Animator>();
+        currentMovmentSpeed = movementSpeed;
+        canDash = true;
     }
 
     // Update is called once per frame
@@ -39,6 +46,29 @@ public class PlayerController : MonoBehaviour
         AnimatingPlayer();
         PlayerShooting();
 
+        if(Input.GetKeyDown(KeyCode.Space) && canDash)
+        {
+            currentMovmentSpeed = dashSpeed;
+            canDash = false;
+
+            StartCoroutine(DashCooldownCounter());
+            StartCoroutine(DashLengthCounter());
+        }
+
+    }
+
+    IEnumerator DashCooldownCounter()
+    {
+        yield return new WaitForSeconds(dashCooldown);
+
+        canDash = true;
+    }
+
+    IEnumerator DashLengthCounter()
+    {
+        yield return new WaitForSeconds(dashLength);
+
+        currentMovmentSpeed = movementSpeed;
     }
 
     private void AnimatingPlayer()
@@ -111,6 +141,6 @@ public class PlayerController : MonoBehaviour
         //the method below is not sufficient - it causes jittering when coliding with walls
         //transform.position += new Vector3(movementInput.x, movementInput.y, 0f) * movementSpeed * Time.deltaTime;
 
-        playerRigidbody.velocity = movementInput * movementSpeed;
+        playerRigidbody.velocity = movementInput * currentMovmentSpeed;
     }
 }
