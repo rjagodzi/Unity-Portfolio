@@ -17,7 +17,11 @@ public class LevelManager : MonoBehaviour
 
     public IEnumerator LoadingNextLevel(string nextLevel)
     {
-        yield return new WaitForSeconds(timeToLoad);
+        Time.timeScale = 0.2f;
+
+        yield return new WaitForSecondsRealtime(timeToLoad);
+
+        Time.timeScale = 1f;
 
         SceneManager.LoadScene(nextLevel);
     }
