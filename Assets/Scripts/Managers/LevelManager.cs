@@ -17,7 +17,9 @@ public class LevelManager : MonoBehaviour
 
     public IEnumerator LoadingNextLevel(string nextLevel)
     {
-        Time.timeScale = 0.2f;
+        Time.timeScale = 0.5f;
+
+        UIManager.instance.Fading();
 
         yield return new WaitForSecondsRealtime(timeToLoad);
 
