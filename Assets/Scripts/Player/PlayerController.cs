@@ -45,16 +45,23 @@ public class PlayerController : MonoBehaviour
         PointingGunAtMouse();
         AnimatingPlayer();
         PlayerShooting();
+        PlayerTorpedo();
 
-        if(Input.GetKeyDown(KeyCode.Space) && canDash)
+    }
+
+    private void PlayerTorpedo()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && canDash)
         {
             currentMovmentSpeed = dashSpeed;
             canDash = false;
 
+            playerAnimator.SetTrigger("Torpedo");
+
             StartCoroutine(DashCooldownCounter());
             StartCoroutine(DashLengthCounter());
-        }
 
+        }
     }
 
     IEnumerator DashCooldownCounter()
@@ -111,6 +118,11 @@ public class PlayerController : MonoBehaviour
 
     private void PlayerShooting()
     {
+        if (!canDash)
+        {
+            return;
+        }
+
         if (Input.GetMouseButtonDown(0) && !isWeaponAutomatic)
         {
             // Instantiate the projectile at the position and rotation of this transform
