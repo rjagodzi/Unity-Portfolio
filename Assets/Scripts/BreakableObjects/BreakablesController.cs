@@ -4,19 +4,34 @@ using UnityEngine;
 
 public class BreakablesController : MonoBehaviour
 {
-    [SerializeField] GameObject player;
+    [SerializeField] GameObject[] brokenParts;
+
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Player") 
-            && player.GetComponent<PlayerController>().PlayerIsDashing())
+        if (collision.gameObject.CompareTag("Player"))
         {
-            GetComponent<Animator>().SetTrigger("Break");
+            bool playerIsDashing = collision.gameObject.GetComponent<PlayerController>().PlayerIsDashing();
+
+            if (playerIsDashing)
+            {
+                GetComponent<Animator>().SetTrigger("Break");
+                
+                for(int i = 0; i < brokenParts.Length; i++)
+                {
+                    int randomBrokenPart = Random.Range(0, brokenParts.Length);
+                    Instantiate(brokenParts[randomBrokenPart], transform.position, transform.rotation);
+                }
+                
+            }
+            
         }
     }
 
     public void Destroy()
     {
+        //Instantiate(brokenParts, transform.position, transform.rotation);
         Destroy(gameObject);
     }
 
