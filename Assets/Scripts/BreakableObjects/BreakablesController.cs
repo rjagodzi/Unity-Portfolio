@@ -5,9 +5,7 @@ using UnityEngine;
 public class BreakablesController : MonoBehaviour
 {
     [SerializeField] GameObject[] brokenParts;
-
-
-
+    
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -21,7 +19,12 @@ public class BreakablesController : MonoBehaviour
                 for(int i = 0; i < brokenParts.Length; i++)
                 {
                     int randomBrokenPart = Random.Range(0, brokenParts.Length);
-                    Instantiate(brokenParts[randomBrokenPart], transform.position, transform.rotation);
+                    int randomRotation = Random.Range(0, 4);
+
+                    Instantiate(
+                        brokenParts[randomBrokenPart], 
+                        transform.position, 
+                        Quaternion.Euler(0f, 0f, 90f * randomRotation));
                 }
                 
             }
@@ -31,7 +34,6 @@ public class BreakablesController : MonoBehaviour
 
     public void Destroy()
     {
-        //Instantiate(brokenParts, transform.position, transform.rotation);
         Destroy(gameObject);
     }
 
