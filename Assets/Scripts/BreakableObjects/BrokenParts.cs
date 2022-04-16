@@ -8,10 +8,16 @@ public class BrokenParts : MonoBehaviour
     private Vector3 movementDirection;
 
     [SerializeField] float haltingFacor = 5f;
+    [SerializeField] float lifeTime = 3f;
+    [SerializeField] float fadeSpeed = 3f;
+
+    private SpriteRenderer partSprite;
 
     // Start is called before the first frame update
     void Start()
     {
+        partSprite = GetComponent<SpriteRenderer>();
+
         movementDirection.x = Random.Range(-moveSpeed, moveSpeed);
         movementDirection.y = Random.Range(-moveSpeed, moveSpeed);
     }
@@ -22,5 +28,22 @@ public class BrokenParts : MonoBehaviour
         transform.position += movementDirection * Time.deltaTime;
 
         movementDirection = Vector3.Lerp(movementDirection, Vector3.zero, haltingFacor * Time.deltaTime);
+
+        lifeTime -= Time.deltaTime;
+
+        if(lifeTime <= 0)
+        {
+            partSprite.color = new Color(
+                partSprite.color.r,
+                partSprite.color.g,
+                partSprite.color.b,
+                Mathf.MoveTowards(partSprite.color.a, 0f, fadeSpeed * Time.deltaTime)
+                );
+            
+            if(partSprite.color.a == 0f)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 }
