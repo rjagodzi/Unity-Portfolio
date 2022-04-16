@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float timeBetweenShots;
     private float shotCounter = 0;
 
-    private float currentMovmentSpeed;
+    private float currentMovementSpeed;
     private bool canDash;
 
     [SerializeField] float dashSpeed = 16f, dashLength = 0.5f, dashCooldown = 1f;
@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
         mainCamera = Camera.main;
 
         playerAnimator = GetComponent<Animator>();
-        currentMovmentSpeed = movementSpeed;
+        currentMovementSpeed = movementSpeed;
         canDash = true;
     }
 
@@ -49,11 +49,23 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    public bool PlayerIsDashing()
+    {
+        if (currentMovementSpeed == dashSpeed)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     private void PlayerTorpedo()
     {
         if (Input.GetKeyDown(KeyCode.Space) && canDash)
         {
-            currentMovmentSpeed = dashSpeed;
+            currentMovementSpeed = dashSpeed;
             canDash = false;
 
             playerAnimator.SetTrigger("Torpedo");
@@ -75,7 +87,7 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(dashLength);
 
-        currentMovmentSpeed = movementSpeed;
+        currentMovementSpeed = movementSpeed;
     }
 
     private void AnimatingPlayer()
@@ -153,6 +165,6 @@ public class PlayerController : MonoBehaviour
         //the method below is not sufficient - it causes jittering when coliding with walls
         //transform.position += new Vector3(movementInput.x, movementInput.y, 0f) * movementSpeed * Time.deltaTime;
 
-        playerRigidbody.velocity = movementInput * currentMovmentSpeed;
+        playerRigidbody.velocity = movementInput * currentMovementSpeed;
     }
 }
