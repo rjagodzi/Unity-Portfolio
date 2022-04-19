@@ -16,15 +16,10 @@ public class PlayerController : MonoBehaviour
 
     private Animator playerAnimator;
 
-    [SerializeField] GameObject bullet;
-    [SerializeField] Transform firePoint;
-
-    [SerializeField] bool isWeaponAutomatic;
-    [SerializeField] float timeBetweenShots;
-    private float shotCounter = 0;
-
     private float currentMovementSpeed;
+
     private bool canDash;
+
 
     [SerializeField] float dashSpeed = 16f, dashLength = 0.5f, dashCooldown = 1f;
 
@@ -44,7 +39,6 @@ public class PlayerController : MonoBehaviour
         PlayerMoving();
         PointingGunAtMouse();
         AnimatingPlayer();
-        PlayerShooting();
         PlayerTorpedo();
 
     }
@@ -125,31 +119,6 @@ public class PlayerController : MonoBehaviour
         {
             transform.localScale = Vector3.one;
             weaponsArm.localScale = Vector3.one;
-        }
-    }
-
-    private void PlayerShooting()
-    {
-        if (!canDash)
-        {
-            return;
-        }
-
-        if (Input.GetMouseButtonDown(0) && !isWeaponAutomatic)
-        {
-            // Instantiate the projectile at the position and rotation of this transform
-            Instantiate(bullet, firePoint.position, firePoint.rotation);
-        }
-
-        if (Input.GetMouseButton(0) && isWeaponAutomatic)
-        {
-            shotCounter -= Time.deltaTime;
-
-            if (shotCounter <= 0)
-            {
-                Instantiate(bullet, firePoint.position, firePoint.rotation);
-                shotCounter = timeBetweenShots;
-            }
         }
     }
 

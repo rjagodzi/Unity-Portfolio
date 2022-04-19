@@ -30,6 +30,7 @@ public class BreakablesController : MonoBehaviour
             }
             
         }
+
     }
 
     public void Destroy()

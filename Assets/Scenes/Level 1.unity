@@ -45744,41 +45744,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 184673790749636655, guid: 4fba0f2a113e726408e37612fb4dffe1, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 184673791416075448, guid: 4fba0f2a113e726408e37612fb4dffe1, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 184673791883138292, guid: 4fba0f2a113e726408e37612fb4dffe1, type: 3}
-      propertyPath: bullet
-      value: 
-      objectReference: {fileID: 2677545540902286048, guid: 59123e0347bae694b949e4c23820c972, type: 3}
-    - target: {fileID: 184673791883138292, guid: 4fba0f2a113e726408e37612fb4dffe1, type: 3}
-      propertyPath: firePoint
-      value: 
-      objectReference: {fileID: 184673790907182813}
-    - target: {fileID: 184673791883138292, guid: 4fba0f2a113e726408e37612fb4dffe1, type: 3}
-      propertyPath: movementSpeed
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 184673791883138292, guid: 4fba0f2a113e726408e37612fb4dffe1, type: 3}
-      propertyPath: timeBetweenShots
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 184673791883138294, guid: 4fba0f2a113e726408e37612fb4dffe1, type: 3}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 184673791883138298, guid: 4fba0f2a113e726408e37612fb4dffe1, type: 3}
       propertyPath: m_Name
       value: DoomPlayer
-      objectReference: {fileID: 0}
-    - target: {fileID: 184673791883138298, guid: 4fba0f2a113e726408e37612fb4dffe1, type: 3}
-      propertyPath: m_TagString
-      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 184673791883138299, guid: 4fba0f2a113e726408e37612fb4dffe1, type: 3}
       propertyPath: m_RootOrder
@@ -45824,17 +45792,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 184673792528219796, guid: 4fba0f2a113e726408e37612fb4dffe1, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fba0f2a113e726408e37612fb4dffe1, type: 3}
---- !u!4 &184673790907182813 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1540233453414774640, guid: 4fba0f2a113e726408e37612fb4dffe1, type: 3}
-  m_PrefabInstance: {fileID: 184673790907182812}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2286119775636295885
 PrefabInstance:
   m_ObjectHideFlags: 0
