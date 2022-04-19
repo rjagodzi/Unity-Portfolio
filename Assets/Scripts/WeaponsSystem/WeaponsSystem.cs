@@ -10,6 +10,9 @@ public class WeaponsSystem : MonoBehaviour
     private float shotCounter = 0;
     [SerializeField] float timeBetweenShots;
 
+    [SerializeField] Sprite weaponImage;
+    [SerializeField] string weaponName;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,6 +58,16 @@ public class WeaponsSystem : MonoBehaviour
         //        shotCounter = timeBetweenShots;
         //    }
         //}
+    }
+
+    public Sprite GetWeaponImageUI()
+    {
+        return weaponImage;
+    }
+
+    public string GetWeaponNameUI()
+    {
+        return weaponName;
     }
 
 }

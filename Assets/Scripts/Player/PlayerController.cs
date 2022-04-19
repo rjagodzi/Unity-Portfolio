@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] float dashSpeed = 16f, dashLength = 0.5f, dashCooldown = 1f;
 
-    [SerializeField] List<WeaponsSystem> availableGuns = new List<WeaponsSystem>();
+    [SerializeField] List<WeaponsSystem> availableWeapons = new List<WeaponsSystem>();
 
     private int currentGun;
 
@@ -34,6 +34,9 @@ public class PlayerController : MonoBehaviour
         playerAnimator = GetComponent<Animator>();
         currentMovementSpeed = movementSpeed;
         canDash = true;
+
+        currentGun = 0; 
+        SettingWeaponsUI();
     }
 
     // Update is called once per frame
@@ -50,27 +53,36 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            if(availableGuns.Count > 0)
+            if(availableWeapons.Count > 0)
             {
                 currentGun++;
 
-                if(currentGun >= availableGuns.Count)
+                if (currentGun >= availableWeapons.Count)
                 {
                     currentGun = 0;
                 }
 
-                foreach(WeaponsSystem gun in availableGuns)
+                foreach (WeaponsSystem gun in availableWeapons)
                 {
                     gun.gameObject.SetActive(false);
                 }
 
-                availableGuns[currentGun].gameObject.SetActive(true);
+                availableWeapons[currentGun].gameObject.SetActive(true);
+                SettingWeaponsUI();
             }
             else
             {
                 Debug.LogWarning("No guns available. Pick some up!");
             }
         }
+    }
+
+    private void SettingWeaponsUI()
+    {
+        UIManager.instance.ChangeWeaponUI(
+        availableWeapons[currentGun].GetComponent<WeaponsSystem>().GetWeaponImageUI(),
+        availableWeapons[currentGun].GetComponent<WeaponsSystem>().GetWeaponNameUI()
+        );
     }
 
     public bool PlayerIsDashing()

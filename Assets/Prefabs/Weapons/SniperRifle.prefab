@@ -129,3 +129,5 @@ MonoBehaviour:
   bullet: {fileID: 7907099129019874048, guid: 9382bbb997f437741aa1aa66344c9f8f, type: 3}
   firePoint: {fileID: 2477163080412413380}
   timeBetweenShots: 2
+  weaponImage: {fileID: 21300000, guid: 8615d46f3b3bbc4498e489a5babbc16c, type: 3}
+  weaponName: Sniper Rifle

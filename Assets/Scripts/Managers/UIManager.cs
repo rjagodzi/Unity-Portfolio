@@ -9,7 +9,10 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] Image imageToFade;
 
-    private void Start()
+    [SerializeField] Image weaponImage;
+    [SerializeField] Text weaponName;
+
+    private void Awake()
     {
         instance = this;
     }
@@ -18,4 +21,11 @@ public class UIManager : MonoBehaviour
     {
         imageToFade.GetComponent<Animator>().SetTrigger("StartFade");
     }
+
+    public void ChangeWeaponUI (Sprite gunImage, string gunText)
+    {
+        weaponImage.sprite = gunImage;
+        weaponName.text = gunText;
+    }
+
 }
