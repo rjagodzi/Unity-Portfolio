@@ -20,8 +20,11 @@ public class PlayerController : MonoBehaviour
 
     private bool canDash;
 
-
     [SerializeField] float dashSpeed = 16f, dashLength = 0.5f, dashCooldown = 1f;
+
+    [SerializeField] List<WeaponsSystem> availableGuns = new List<WeaponsSystem>();
+
+    private int currentGun;
 
     // Start is called before the first frame update
     void Start()
@@ -40,7 +43,34 @@ public class PlayerController : MonoBehaviour
         PointingGunAtMouse();
         AnimatingPlayer();
         PlayerTorpedo();
+        SwitchGun();
+    }
 
+    public void SwitchGun()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            if(availableGuns.Count > 0)
+            {
+                currentGun++;
+
+                if(currentGun >= availableGuns.Count)
+                {
+                    currentGun = 0;
+                }
+
+                foreach(WeaponsSystem gun in availableGuns)
+                {
+                    gun.gameObject.SetActive(false);
+                }
+
+                availableGuns[currentGun].gameObject.SetActive(true);
+            }
+            else
+            {
+                Debug.LogWarning("No guns available. Pick some up!");
+            }
+        }
     }
 
     public bool PlayerIsDashing()
@@ -69,6 +99,8 @@ public class PlayerController : MonoBehaviour
 
         }
     }
+
+
 
     IEnumerator DashCooldownCounter()
     {
