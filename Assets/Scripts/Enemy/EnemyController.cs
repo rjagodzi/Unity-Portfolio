@@ -108,8 +108,12 @@ public class EnemyController : MonoBehaviour
     {
         yield return new WaitForSeconds(timeBetweenShots);
 
-        Instantiate(enemyProjectile, firePosition.position, firePosition.rotation);
-        readyToShoot = true;
+        if (playerToChase.gameObject.activeInHierarchy)
+        {
+            Instantiate(enemyProjectile, firePosition.position, firePosition.rotation);
+            readyToShoot = true;
+
+        }
     }
 
     public void DamageEnemy(int damageTaken)
