@@ -46173,7 +46173,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4518274013493111508, guid: 4fba0f2a113e726408e37612fb4dffe1, type: 3}
       propertyPath: currentHealth
-      value: 0
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fba0f2a113e726408e37612fb4dffe1, type: 3}
@@ -46379,6 +46379,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 514212846, guid: 9102b8c16e84f8b4ab43617ccdc3087a, type: 3}
+      propertyPath: healthText
+      value: 
+      objectReference: {fileID: 412609643}
+    - target: {fileID: 514212846, guid: 9102b8c16e84f8b4ab43617ccdc3087a, type: 3}
+      propertyPath: healthSlider
+      value: 
+      objectReference: {fileID: 1766897011}
     - target: {fileID: 996366712, guid: 9102b8c16e84f8b4ab43617ccdc3087a, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0

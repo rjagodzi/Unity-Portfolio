@@ -12,16 +12,33 @@ public class PlayerHealthHandler : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
+
+        UIManager.instance.healthSlider.maxValue = maxHealth;
+
+        PlayerHealthUpdate();
+    }
+
+    private void Update()
+    {
+        PlayerHealthUpdate();
     }
 
     public void DamagePlayer(int damageTaken)
     {
         currentHealth -= damageTaken;
+        PlayerHealthUpdate();
 
         if(currentHealth <= 0)
         {
             gameObject.SetActive(false);
         }
+
+    }
+
+    public void PlayerHealthUpdate()
+    {
+        UIManager.instance.healthSlider.value = currentHealth;
+        UIManager.instance.healthText.text = currentHealth + "/" + maxHealth;
     }
 
 }
