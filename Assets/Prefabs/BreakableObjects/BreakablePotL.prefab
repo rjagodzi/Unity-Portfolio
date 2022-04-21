@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5902674141012463976}
   - component: {fileID: 5902674141012463975}
   - component: {fileID: 5902674141012463974}
+  - component: {fileID: 825674891}
   m_Layer: 0
   m_Name: BreakablePotL
   m_TagString: Untagged
@@ -164,8 +165,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ed9508c8b01dab4aa006703da03a61d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   brokenParts:
   - {fileID: 4865705140581146380, guid: aec542638e61c22458f1c60eb8110ab8, type: 3}
   - {fileID: 764969247293993025, guid: ca2080f49e9357b43b31b10d6b119bd9, type: 3}
   - {fileID: 1163179986593658245, guid: e5e9b3c0a11686c4798fcfad3d8805fa, type: 3}
+--- !u!114 &825674891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5902674141012463980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46c62b917dbcf0644b02be1b85221ffd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropsItems: 1
+  itemsToDrop:
+  - {fileID: 3126835168344338944, guid: 5b0a514086a3bbd4f9c972bdbf5f076b, type: 3}
+  itemDropChance: 1

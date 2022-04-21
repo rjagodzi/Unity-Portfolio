@@ -10,7 +10,7 @@ public class HealthPickup : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && !pickedUp && GetComponent<PickupDelayer>().canBePickedUpMethod())
         {
             pickedUp = true;
             collision.GetComponent<PlayerHealthHandler>().HealPlayer(healAmount);

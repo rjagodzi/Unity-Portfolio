@@ -26,6 +26,16 @@ public class BreakablesController : MonoBehaviour
                         transform.position, 
                         Quaternion.Euler(0f, 0f, 90f * randomRotation));
                 }
+
+                if(GetComponent<ItemDropper>() != null)
+                {
+                    if (GetComponent<ItemDropper>().IsItemDropper())
+                    {
+                        GetComponent<ItemDropper>().DropItem();
+                    }
+                }
+
+                
                 
             }
             
