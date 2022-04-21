@@ -20,7 +20,7 @@ public class PlayerHealthHandler : MonoBehaviour
 
         UIManager.instance.healthSlider.maxValue = maxHealth;
 
-        PlayerHealthUpdate();
+        PlayerHealthUpdateUI();
 
         isInvincible = false;
     }
@@ -30,7 +30,7 @@ public class PlayerHealthHandler : MonoBehaviour
         if (!isInvincible)
         {
             currentHealth -= damageTaken;
-            PlayerHealthUpdate();
+            PlayerHealthUpdateUI();
 
             MakePlayerInvincible();
 
@@ -81,10 +81,23 @@ public class PlayerHealthHandler : MonoBehaviour
         isInvincible = false;
     }
 
-    public void PlayerHealthUpdate()
+    public void PlayerHealthUpdateUI()
     {
         UIManager.instance.healthSlider.value = currentHealth;
         UIManager.instance.healthText.text = currentHealth + "/" + maxHealth;
+    }
+
+    public void HealPlayer(int healAmount)
+    {
+        currentHealth += healAmount;
+
+        if(currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+
+        PlayerHealthUpdateUI();
+
     }
 
 }
