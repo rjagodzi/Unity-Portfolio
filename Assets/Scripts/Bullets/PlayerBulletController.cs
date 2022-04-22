@@ -35,6 +35,19 @@ public class PlayerBulletController : MonoBehaviour
             Instantiate(damageEffects[randomSplash], transform.position, transform.rotation);
             collision.GetComponent<EnemyController>().DamageEnemy(damageAmmount);
         }
+        else if (collision.gameObject.CompareTag("BreakableObject"))
+        {
+            Instantiate(bulletImpactEffect, transform.position, transform.rotation);
+            collision.GetComponent<Animator>().SetTrigger("Break");
+            
+            if (collision.GetComponent<ItemDropper>() != null)
+            {
+                if (collision.GetComponent<ItemDropper>().IsItemDropper())
+                {
+                    collision.GetComponent<ItemDropper>().DropItem();
+                }
+            }
+        }
         else
         {
             Instantiate(bulletImpactEffect, transform.position, transform.rotation);
@@ -42,5 +55,4 @@ public class PlayerBulletController : MonoBehaviour
         
         Destroy(gameObject);
     }
-
 }
