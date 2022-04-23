@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8218190238235146194}
   - component: {fileID: 8218190238235146193}
   - component: {fileID: 39256065}
+  - component: {fileID: -7584631053225606387}
   m_Layer: 11
   m_Name: Sniper Pickup
   m_TagString: Untagged
@@ -143,3 +144,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-7584631053225606387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8218190238235146192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857bf16643bfe5b46a9a363d06d6f7df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBeforePickup: 0

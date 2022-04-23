@@ -13,7 +13,9 @@ public class WeaponsChest : MonoBehaviour
     [SerializeField] Sprite openChestSprite;
     [SerializeField] TextMeshProUGUI openKeyText;
 
-    private bool canOpen;
+    [SerializeField] Transform spawnPoint;
+
+    private bool canOpen, hasBeenOpened;
 
     // Start is called before the first frame update
     void Start()
@@ -28,26 +30,29 @@ public class WeaponsChest : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            openKeyText.gameObject.SetActive(true);
-            canOpen = true;
-            
-        }
+    {       
+        openKeyText.gameObject.SetActive(true);
+        canOpen = true;
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        openKeyText.gameObject.SetActive(false);
+        if (!hasBeenOpened)
+        {
+            openKeyText.gameObject.SetActive(false);
+        }
+
         canOpen = false;
     }
-
+     
     private void OpenTheChest()
     {
-        if (Input.GetKeyDown(KeyCode.E) && canOpen)
+        if (Input.GetKeyDown(KeyCode.E) && canOpen && !hasBeenOpened)
         {
             chestSR.sprite = openChestSprite;
+            int randomWeapon = Random.Range(0, potentialWeapon.Length);
+            Instantiate(potentialWeapon[randomWeapon], spawnPoint.transform.position, spawnPoint.transform.rotation);
+            hasBeenOpened = true;
         }
     }
 
