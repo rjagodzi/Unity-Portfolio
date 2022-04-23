@@ -60,27 +60,32 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            if(availableWeapons.Count > 0)
+            ActualGunSwitch();
+        }
+    }
+
+    private void ActualGunSwitch()
+    {
+        if (availableWeapons.Count > 0)
+        {
+            currentGun++;
+
+            if (currentGun >= availableWeapons.Count)
             {
-                currentGun++;
-
-                if (currentGun >= availableWeapons.Count)
-                {
-                    currentGun = 0;
-                }
-
-                foreach (WeaponsSystem gun in availableWeapons)
-                {
-                    gun.gameObject.SetActive(false);
-                }
-
-                availableWeapons[currentGun].gameObject.SetActive(true);
-                SettingWeaponsUI();
+                currentGun = 0;
             }
-            else
+
+            foreach (WeaponsSystem gun in availableWeapons)
             {
-                Debug.LogWarning("No guns available. Pick some up!");
+                gun.gameObject.SetActive(false);
             }
+
+            availableWeapons[currentGun].gameObject.SetActive(true);
+            SettingWeaponsUI();
+        }
+        else
+        {
+            Debug.LogWarning("No guns available. Pick some up!");
         }
     }
 
@@ -186,6 +191,17 @@ public class PlayerController : MonoBehaviour
         //transform.position += new Vector3(movementInput.x, movementInput.y, 0f) * movementSpeed * Time.deltaTime;
 
         playerRigidbody.velocity = movementInput * currentMovementSpeed;
+    }
+
+    public void AddWeapon(WeaponsSystem weaponToAdd)
+    {
+        availableWeapons.Add(weaponToAdd);
+
+        //example: after picking up the shotgun the availableWeapons.Count is 2,
+        //then we remove 2, which means we are at 0
+        //and we do TheActualSwitch, which inreases by 1 thus choosing the shotgun
+        currentGun = availableWeapons.Count - 2;
+        ActualGunSwitch();
     }
 
     public List<WeaponsSystem> GetAvailableWeaponsOnPlayer()

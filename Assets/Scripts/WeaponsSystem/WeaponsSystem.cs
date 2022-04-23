@@ -41,23 +41,6 @@ public class WeaponsSystem : MonoBehaviour
                 shotCounter = timeBetweenShots;
             }
         }
-
-        //if (Input.GetMouseButtonDown(0) && !isWeaponAutomatic)
-        //{
-        //    // Instantiate the projectile at the position and rotation of this transform
-        //    Instantiate(bullet, firePoint.position, firePoint.rotation);
-        //}
-
-        //if (Input.GetMouseButton(0) && isWeaponAutomatic)
-        //{
-        //    shotCounter -= Time.deltaTime;
-
-        //    if (shotCounter <= 0)
-        //    {
-        //        Instantiate(bullet, firePoint.position, firePoint.rotation);
-        //        shotCounter = timeBetweenShots;
-        //    }
-        //}
     }
 
     public Sprite GetWeaponImageUI()
