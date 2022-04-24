@@ -37,6 +37,7 @@ public class UIManager : MonoBehaviour
     public void DisplayDeathScreen()
     {
         deathScreen.SetActive(true);
+        AudioManager.instance.PlaySFX(5);
         AudioManager.instance.PlayDeathMusic();
     }
 }

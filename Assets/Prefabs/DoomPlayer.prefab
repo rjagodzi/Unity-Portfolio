@@ -500,6 +500,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pistol
       objectReference: {fileID: 0}
+    - target: {fileID: 5079042685773317756, guid: f55d3b40ccd20214987221e96f7ffe9b, type: 3}
+      propertyPath: weaponSFX
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f55d3b40ccd20214987221e96f7ffe9b, type: 3}
 --- !u!4 &3886713442246489490 stripped

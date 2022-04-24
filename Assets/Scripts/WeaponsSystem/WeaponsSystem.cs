@@ -13,6 +13,12 @@ public class WeaponsSystem : MonoBehaviour
     [SerializeField] Sprite weaponImage;
     [SerializeField] string weaponName;
 
+    //creating a method that would take the weaponSFX variable
+    //and use it to play a specific SFX track based on the weapon fired
+    //was one of my proudest moments during the creation of this game
+    //and it made me realize how much I've learned
+    [SerializeField] int weaponSFX;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +44,7 @@ public class WeaponsSystem : MonoBehaviour
             if(Input.GetMouseButtonDown(0) || Input.GetMouseButton(0))
             {
                 Instantiate(bullet, firePoint.position, firePoint.rotation);
+                PlayWeaponSFX();
                 shotCounter = timeBetweenShots;
             }
         }
@@ -51,6 +58,11 @@ public class WeaponsSystem : MonoBehaviour
     public string GetWeaponName()
     {
         return weaponName;
+    }
+
+    public void PlayWeaponSFX()
+    {
+        AudioManager.instance.PlaySFX(weaponSFX);
     }
 
 }

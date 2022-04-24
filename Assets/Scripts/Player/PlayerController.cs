@@ -187,7 +187,7 @@ public class PlayerController : MonoBehaviour
 
         movementInput.Normalize();
 
-        //the method below is not sufficient - it causes jittering when coliding with walls
+        //the line below is not sufficient - it causes jittering when coliding with walls
         //transform.position += new Vector3(movementInput.x, movementInput.y, 0f) * movementSpeed * Time.deltaTime;
 
         playerRigidbody.velocity = movementInput * currentMovementSpeed;

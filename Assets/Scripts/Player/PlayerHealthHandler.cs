@@ -30,6 +30,7 @@ public class PlayerHealthHandler : MonoBehaviour
         if (!isInvincible)
         {
             currentHealth -= damageTaken;
+            AudioManager.instance.PlaySFX(6);
             PlayerHealthUpdateUI();
 
             MakePlayerInvincible();
@@ -90,10 +91,12 @@ public class PlayerHealthHandler : MonoBehaviour
     public void HealPlayer(int healAmount)
     {
         currentHealth += healAmount;
+        AudioManager.instance.PlaySFX(3);
 
         if(currentHealth > maxHealth)
         {
             currentHealth = maxHealth;
+            AudioManager.instance.PlaySFX(3);
         }
 
         PlayerHealthUpdateUI();

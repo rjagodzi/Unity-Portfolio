@@ -6,6 +6,7 @@ public class BreakablesController : MonoBehaviour
 {
     [SerializeField] GameObject[] brokenParts;
     public static BreakablesController instance;
+    [SerializeField] int sfxNumberToPlay = 0;
 
     private void Start()
     {
@@ -22,6 +23,7 @@ public class BreakablesController : MonoBehaviour
             {
 
                 GetComponent<Animator>().SetTrigger("Break");
+                PlayBreakSFX();
 
                 for (int i = 0; i < brokenParts.Length; i++)
                 {
@@ -46,6 +48,11 @@ public class BreakablesController : MonoBehaviour
 
         }
 
+    }
+
+    public void PlayBreakSFX()
+    {
+        AudioManager.instance.PlaySFX(sfxNumberToPlay);
     }
 
     public void Destroy()

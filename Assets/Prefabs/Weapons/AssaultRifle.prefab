@@ -131,3 +131,4 @@ MonoBehaviour:
   timeBetweenShots: 0.2
   weaponImage: {fileID: 21300000, guid: 8c234cf48bff45540b1688df936903af, type: 3}
   weaponName: Assault Rifle
+  weaponSFX: 7

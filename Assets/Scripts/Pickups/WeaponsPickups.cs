@@ -13,6 +13,7 @@ public class WeaponsPickups : MonoBehaviour
         if (collision.CompareTag("Player") && !pickedUp)
         {
             pickedUp = true;
+            AudioManager.instance.PlaySFX(11);
 
             bool gunOnPlayer = false;
 

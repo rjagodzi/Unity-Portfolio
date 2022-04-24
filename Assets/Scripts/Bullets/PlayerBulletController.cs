@@ -31,6 +31,7 @@ public class PlayerBulletController : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             int randomSplash = Random.Range(0, damageEffects.Length);
+            AudioManager.instance.PlaySFX(1);
 
             Instantiate(damageEffects[randomSplash], transform.position, transform.rotation);
             collision.GetComponent<EnemyController>().DamageEnemy(damageAmmount);
@@ -39,6 +40,7 @@ public class PlayerBulletController : MonoBehaviour
         {
             Instantiate(bulletImpactEffect, transform.position, transform.rotation);
             collision.GetComponent<Animator>().SetTrigger("Break");
+            AudioManager.instance.PlaySFX(0);
             
             if (collision.GetComponent<ItemDropper>() != null)
             {

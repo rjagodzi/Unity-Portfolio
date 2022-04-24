@@ -50,6 +50,7 @@ public class WeaponsChest : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && canOpen && !hasBeenOpened)
         {
             chestSR.sprite = openChestSprite;
+            AudioManager.instance.PlaySFX(12);
             int randomWeapon = Random.Range(0, potentialWeapon.Length);
             Instantiate(potentialWeapon[randomWeapon], spawnPoint.transform.position, spawnPoint.transform.rotation);
             hasBeenOpened = true;
