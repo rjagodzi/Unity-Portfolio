@@ -37,5 +37,6 @@ public class UIManager : MonoBehaviour
     public void DisplayDeathScreen()
     {
         deathScreen.SetActive(true);
+        AudioManager.instance.PlayDeathMusic();
     }
 }
