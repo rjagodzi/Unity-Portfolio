@@ -117,6 +117,7 @@ public class PlayerController : MonoBehaviour
             canDash = false;
 
             playerAnimator.SetTrigger("Torpedo");
+            AudioManager.instance.PlaySFX(15);
 
             StartCoroutine(DashCooldownCounter());
             StartCoroutine(DashLengthCounter());

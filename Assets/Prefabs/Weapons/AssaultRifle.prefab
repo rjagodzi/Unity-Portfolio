@@ -128,7 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 1809426741567704120, guid: 320a58871059ac44f9fadb982daf1044, type: 3}
   firePoint: {fileID: 7267159567278756316}
-  timeBetweenShots: 0.2
+  timeBetweenShots: 0.1
   weaponImage: {fileID: 21300000, guid: 8c234cf48bff45540b1688df936903af, type: 3}
   weaponName: Assault Rifle
   weaponSFX: 7

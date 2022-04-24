@@ -125,6 +125,7 @@ public class EnemyController : MonoBehaviour
         if(enemyHealth <= 0)
         {
             Instantiate(deathSplatter, transform.position, transform.rotation);
+            AudioManager.instance.PlaySFX(13);
 
             if (GetComponent<ItemDropper>() != null)
             {

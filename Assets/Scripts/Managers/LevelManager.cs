@@ -17,6 +17,8 @@ public class LevelManager : MonoBehaviour
 
     public IEnumerator LoadingNextLevel(string nextLevel)
     {
+        AudioManager.instance.PlaySFX(14);
+
         Time.timeScale = 0.5f;
 
         UIManager.instance.Fading();

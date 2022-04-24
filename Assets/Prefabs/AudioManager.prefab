@@ -48,7 +48,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 1285702c7ad0ba14aafe4b217c2a4741, type: 3}
   - {fileID: 8300000, guid: 205ed43c1b2ffed47948fa977041359a, type: 3}
   SFX:
-  - {fileID: 8300000, guid: 19489a34af041af46b9b7f8b4ffedccd, type: 3}
+  - {fileID: 8300000, guid: 7e9b450299fc150409412c070916df19, type: 3}
   - {fileID: 8300000, guid: 244497a33e15b7d4dbd21ceb592a07b7, type: 3}
   - {fileID: 8300000, guid: 5a422f31a08b5ef45af2b10bcda364aa, type: 3}
   - {fileID: 8300000, guid: 3337877cbd2f0744fa336b6c482c0566, type: 3}
@@ -61,6 +61,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5c7a55422fda7d7439682d5972b24510, type: 3}
   - {fileID: 8300000, guid: 000fbf1a639e90543b64ad1bcf2c48cc, type: 3}
   - {fileID: 8300000, guid: b9df46266ded8ec47ad6198e5c2034f9, type: 3}
+  - {fileID: 8300000, guid: f8bcfb84c550bd648a2b3db8a5023171, type: 3}
+  - {fileID: 8300000, guid: 149aa9c579bfdb94d8241ae802b77144, type: 3}
 --- !u!82 &2487311226185405956
 AudioSource:
   m_ObjectHideFlags: 0
@@ -70,7 +72,7 @@ AudioSource:
   m_GameObject: {fileID: 2487311226185405957}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -6177813320084053786, guid: 432f3228ad927b64091135a32dac8844, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
