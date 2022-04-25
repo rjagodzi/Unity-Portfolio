@@ -9,10 +9,14 @@ public class EnemyController : MonoBehaviour
     [SerializeField] int enemyHealth = 100;
     private Rigidbody2D enemyRigidBody;
 
-    [SerializeField] float chasePlayerRange;
-    [SerializeField] float keepChasingRange;
+    //enemies that chase player
+    [SerializeField] bool shouldChasePlayer;
+    [SerializeField] float playerChaseRange;
+    [SerializeField] float playerKeepChasingRange;
     [SerializeField] float shootPlayerRange;
+    
     private Vector3 directionToMoveIn;
+    
     private bool isChasing;
 
     private Transform playerToChase;
@@ -28,7 +32,13 @@ public class EnemyController : MonoBehaviour
     private bool readyToShoot;
 
     [SerializeField] GameObject deathSplatter;
-    //[SerializeField] GameObject impactSplatter;
+
+
+    //enemies that run away
+    [SerializeField] bool shouldRunAway;
+    [SerializeField] float runawayRange;
+
+    //
 
     // Start is called before the first frame update
     void Start()
@@ -84,12 +94,15 @@ public class EnemyController : MonoBehaviour
 
     private void EnemyChasingPlayer()
     {
-        if (Vector3.Distance(transform.position, playerToChase.position) < chasePlayerRange)
+
+        float distancePlayerEnemy = Vector3.Distance(transform.position, playerToChase.position);
+
+        if (distancePlayerEnemy < playerChaseRange && shouldChasePlayer)
         {
             isChasing = true;
             directionToMoveIn = playerToChase.position - transform.position;
         }
-        else if (isChasing && Vector3.Distance(transform.position, playerToChase.position) < keepChasingRange)
+        else if (isChasing && distancePlayerEnemy < playerKeepChasingRange && shouldChasePlayer)
         {
             directionToMoveIn = playerToChase.position - transform.position;
         }
@@ -97,6 +110,11 @@ public class EnemyController : MonoBehaviour
         {
             isChasing = false;
             directionToMoveIn = Vector3.zero;
+        }
+
+        if(shouldRunAway && distancePlayerEnemy < runawayRange)
+        {
+            directionToMoveIn = transform.position - playerToChase.position;
         }
 
         directionToMoveIn.Normalize();
@@ -141,12 +159,25 @@ public class EnemyController : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
+
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, chasePlayerRange);
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, keepChasingRange);
-        Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, shootPlayerRange);
+
+        if (shouldChasePlayer)
+        {
+            Gizmos.color = Color.blue;
+            Gizmos.DrawWireSphere(transform.position, playerChaseRange);
+
+            Gizmos.color = Color.green;
+            Gizmos.DrawWireSphere(transform.position, playerKeepChasingRange);
+        }
+        
+
+        if (shouldRunAway)
+        {
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawWireSphere(transform.position, runawayRange);
+        }
 
     }
 }

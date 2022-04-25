@@ -50,14 +50,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemySpeed: 2
   enemyHealth: 30
-  chasePlayerRange: 3.31
-  keepChasingRange: 4.55
+  shouldChasePlayer: 1
+  playerChaseRange: 0
+  playerKeepChasingRange: 0
   shootPlayerRange: 4.8
   meleeAttack: 0
   enemyProjectile: {fileID: 2685074504302671078, guid: 31a2eb1eb66e4604da7bd843a15f1360, type: 3}
   firePosition: {fileID: 3619906492275849603}
   timeBetweenShots: 1
   deathSplatter: {fileID: 8564112537919507777, guid: 668dbc8f43ae960458dcfda04ff185ec, type: 3}
+  shouldRunAway: 0
+  runawayRange: 0
 --- !u!61 &3619906492131189117
 BoxCollider2D:
   m_ObjectHideFlags: 0

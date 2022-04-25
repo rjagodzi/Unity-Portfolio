@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8701540844149080745}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.32713318, y: -0.3670416, z: 6.4377847}
+  m_LocalPosition: {x: -0.12, y: 0.24, z: 6.4377847}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8701540845771539228}
@@ -127,14 +127,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemySpeed: 3
   enemyHealth: 10
-  chasePlayerRange: 2.55
-  keepChasingRange: 3.69
-  shootPlayerRange: 3.15
+  shouldChasePlayer: 0
+  playerChaseRange: 5.34
+  playerKeepChasingRange: 4.81
+  shootPlayerRange: 5.3
   meleeAttack: 0
   enemyProjectile: {fileID: 7294579238405199087, guid: bc3c0f40abdd8cd4ebefae126d442f06, type: 3}
   firePosition: {fileID: 8701540844149080746}
   timeBetweenShots: 1
   deathSplatter: {fileID: 8564112537919507777, guid: 668dbc8f43ae960458dcfda04ff185ec, type: 3}
+  shouldRunAway: 1
+  runawayRange: 4.71
 --- !u!114 &8701540845771539231
 MonoBehaviour:
   m_ObjectHideFlags: 0
