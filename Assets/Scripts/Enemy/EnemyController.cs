@@ -9,15 +9,26 @@ public class EnemyController : MonoBehaviour
     [SerializeField] int enemyHealth = 100;
     private Rigidbody2D enemyRigidBody;
 
+    [SerializeField] float shootPlayerRange;
+
     //enemies that chase player
     [SerializeField] bool shouldChasePlayer;
     [SerializeField] float playerChaseRange;
     [SerializeField] float playerKeepChasingRange;
-    [SerializeField] float shootPlayerRange;
+    private bool isChasing;
     
+    //enemies that run away
+    [SerializeField] bool shouldRunAway;
+    [SerializeField] float runawayRange;
+
+    //enemies that wander
+    [SerializeField] bool shouldWander;
+    [SerializeField] float wanderLength, pauseLength;
+    private float wanderCounter, pauseCounter;
+    private Vector3 wanderDirection;
+
     private Vector3 directionToMoveIn;
     
-    private bool isChasing;
 
     private Transform playerToChase;
 
@@ -34,9 +45,6 @@ public class EnemyController : MonoBehaviour
     [SerializeField] GameObject deathSplatter;
 
 
-    //enemies that run away
-    [SerializeField] bool shouldRunAway;
-    [SerializeField] float runawayRange;
 
     //
 
@@ -48,6 +56,11 @@ public class EnemyController : MonoBehaviour
 
         enemyAnimator = GetComponentInChildren<Animator>();
         readyToShoot = true;
+
+        if (shouldWander)
+        {
+            pauseCounter = Random.Range(pauseLength * 0.75f, pauseLength * 1.25f);
+        }
     }
 
     // Update is called once per frame
@@ -110,6 +123,32 @@ public class EnemyController : MonoBehaviour
         {
             isChasing = false;
             directionToMoveIn = Vector3.zero;
+        }
+
+        if (shouldWander)
+        {
+            if(wanderCounter > 0)
+            {
+                wanderCounter -= Time.deltaTime;
+
+                directionToMoveIn = wanderDirection;
+
+                if(wanderCounter <= 0)
+                {
+                    pauseCounter = Random.Range(pauseLength * 0.75f, pauseLength * 1.25f);
+                }
+            }
+
+            if(pauseCounter > 0)
+            {
+                pauseCounter -= Time.deltaTime;
+
+                if(pauseCounter <= 0)
+                {
+                    wanderCounter = Random.Range(wanderLength * 0.75f, wanderLength * 1.25f);
+                    wanderDirection = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0f);
+                }
+            }
         }
 
         if(shouldRunAway && distancePlayerEnemy < runawayRange)
