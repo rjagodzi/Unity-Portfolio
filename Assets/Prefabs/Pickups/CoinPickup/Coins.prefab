@@ -118,6 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinAmount: 25
+  sfxToPlay: 16
 --- !u!114 &6825251576679094252
 MonoBehaviour:
   m_ObjectHideFlags: 0

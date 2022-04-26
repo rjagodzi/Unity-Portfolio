@@ -238,6 +238,12 @@ MonoBehaviour:
   shouldWander: 0
   wanderLength: 0
   pauseLength: 0
+  shouldPatrol: 1
+  patrolPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   meleeAttack: 0
   enemyProjectile: {fileID: 7987052108115688733, guid: bafcc2ab867d7d945acf0c593cd59a21, type: 3}
   firePosition: {fileID: 2977344230583120898}
@@ -255,6 +261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46c62b917dbcf0644b02be1b85221ffd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropsItems: 0
-  itemsToDrop: []
-  itemDropChance: 0.5
+  dropsItems: 1
+  itemsToDrop:
+  - {fileID: 6825251576679094240, guid: e30b226fc1091ad45b58ada6b3f15a5c, type: 3}
+  itemDropChance: 1

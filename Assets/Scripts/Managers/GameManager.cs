@@ -12,9 +12,15 @@ public class GameManager : MonoBehaviour
         instance = this;      
     }
 
+    private void Start()
+    {
+        UIManager.instance.UpdateCoinText(currentCoins);
+    }
+
     public void AddCoins(int amountToAdd)
     {
         currentCoins += amountToAdd;
+        UIManager.instance.UpdateCoinText(currentCoins);
     }
 
     public void RemoveCoins(int amountToRemove)
@@ -25,5 +31,8 @@ public class GameManager : MonoBehaviour
         {
             currentCoins = 0;
         }
+
+        UIManager.instance.UpdateCoinText(currentCoins);
+
     }
 }

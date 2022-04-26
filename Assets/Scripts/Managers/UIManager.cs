@@ -18,6 +18,8 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] GameObject deathScreen;
 
+    [SerializeField] TextMeshProUGUI coinText;
+
     private void Awake()
     {
         instance = this;  
@@ -32,6 +34,11 @@ public class UIManager : MonoBehaviour
     {
         weaponImage.sprite = gunImage;
         weaponName.text = gunText;
+    }
+
+    public void UpdateCoinText(int coinAmount)
+    {
+        coinText.text = coinAmount.ToString();
     }
 
     public void DisplayDeathScreen()

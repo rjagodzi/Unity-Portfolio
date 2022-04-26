@@ -50,17 +50,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemySpeed: 2
   enemyHealth: 30
+  shootPlayerRange: 4.8
   shouldChasePlayer: 1
   playerChaseRange: 0
   playerKeepChasingRange: 0
-  shootPlayerRange: 4.8
+  shouldRunAway: 0
+  runawayRange: 0
+  shouldWander: 0
+  wanderLength: 0
+  pauseLength: 0
+  shouldPatrol: 0
+  patrolPoints: []
   meleeAttack: 0
   enemyProjectile: {fileID: 2685074504302671078, guid: 31a2eb1eb66e4604da7bd843a15f1360, type: 3}
   firePosition: {fileID: 3619906492275849603}
   timeBetweenShots: 1
   deathSplatter: {fileID: 8564112537919507777, guid: 668dbc8f43ae960458dcfda04ff185ec, type: 3}
-  shouldRunAway: 0
-  runawayRange: 0
 --- !u!61 &3619906492131189117
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -122,8 +127,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dropsItems: 1
   itemsToDrop:
+  - {fileID: 6825251576679094240, guid: e30b226fc1091ad45b58ada6b3f15a5c, type: 3}
   - {fileID: 3126835168344338944, guid: 5b0a514086a3bbd4f9c972bdbf5f076b, type: 3}
-  itemDropChance: 1
+  itemDropChance: 0.5
 --- !u!1 &3619906492275849600
 GameObject:
   m_ObjectHideFlags: 0
