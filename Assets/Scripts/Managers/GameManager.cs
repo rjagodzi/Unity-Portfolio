@@ -4,28 +4,12 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance;
     [SerializeField] int currentCoins;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            AddCoins(20);
-        }
-
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            RemoveCoins(10);
-        }
-
-        Debug.Log("I have: " + currentCoins + " coins");
+        instance = this;      
     }
 
     public void AddCoins(int amountToAdd)
