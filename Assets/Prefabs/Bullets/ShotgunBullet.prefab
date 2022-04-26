@@ -152,7 +152,7 @@ MonoBehaviour:
   - {fileID: 2796963040693723351, guid: a5825ab8df700d940b2d2873da61a06a, type: 3}
   - {fileID: 3452313858828717990, guid: 6964b45e1918f5c4ba190e379376729c, type: 3}
   - {fileID: 1800468325410572084, guid: edd8ba4a0cfa8ed409dbb86461ca6b8a, type: 3}
-  bulletSpeed: 10
+  bulletSpeed: 15
   damageAmmount: 15
 --- !u!96 &6395258383660635628
 TrailRenderer:

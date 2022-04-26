@@ -27,6 +27,11 @@ public class EnemyController : MonoBehaviour
     private float wanderCounter, pauseCounter;
     private Vector3 wanderDirection;
 
+    //enemies that patroll
+    [SerializeField] bool shouldPatrol;
+    [SerializeField] Transform[] patrolPoints;
+    private int currentPatrolPoint;
+
     private Vector3 directionToMoveIn;
     
 
@@ -147,6 +152,22 @@ public class EnemyController : MonoBehaviour
                 {
                     wanderCounter = Random.Range(wanderLength * 0.75f, wanderLength * 1.25f);
                     wanderDirection = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0f);
+                }
+            }
+        }
+
+        if (shouldPatrol && !isChasing)
+        {
+            directionToMoveIn = patrolPoints[currentPatrolPoint].position - transform.position;
+
+            float distanceEnemyPoint = Vector3.Distance(transform.position, patrolPoints[currentPatrolPoint].position);
+            
+            if(distanceEnemyPoint < 0.2f)
+            {
+                currentPatrolPoint++;
+                if(currentPatrolPoint >= patrolPoints.Length)
+                {
+                    currentPatrolPoint = 0;
                 }
             }
         }
