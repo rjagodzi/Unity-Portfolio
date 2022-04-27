@@ -3517,7 +3517,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1172765144992109594, guid: 4de0dacad050874448223cb95b4d6821, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1172765144992109594, guid: 4de0dacad050874448223cb95b4d6821, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3622,7 +3622,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Price: 999'
+  m_text: 'Upgrade Health: 30 coins'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f479b5821808fae4aa301fa1d2643c5c, type: 2}
   m_sharedMaterial: {fileID: 4812004213612735252, guid: f479b5821808fae4aa301fa1d2643c5c, type: 2}
@@ -3649,7 +3649,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 135.7
+  m_fontSize: 82.55
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3921,7 +3921,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Price: 999'
+  m_text: 'Buy weapon: 40 coins'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f479b5821808fae4aa301fa1d2643c5c, type: 2}
   m_sharedMaterial: {fileID: 4812004213612735252, guid: f479b5821808fae4aa301fa1d2643c5c, type: 2}
@@ -3948,7 +3948,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 135.7
+  m_fontSize: 107.25
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4048,7 +4048,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6825251576679094255, guid: e30b226fc1091ad45b58ada6b3f15a5c, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6825251576679094255, guid: e30b226fc1091ad45b58ada6b3f15a5c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4390,7 +4390,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 585004047}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.63, z: 0}
+  m_LocalPosition: {x: 0, y: -1.17, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1460914210}
@@ -4492,7 +4492,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 608312303}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.63, z: 0}
+  m_LocalPosition: {x: 0, y: -0.81, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1988559488}
@@ -4822,7 +4822,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Price: 999'
+  m_text: 'Restore Health: 10 coins'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f479b5821808fae4aa301fa1d2643c5c, type: 2}
   m_sharedMaterial: {fileID: 4812004213612735252, guid: f479b5821808fae4aa301fa1d2643c5c, type: 2}
@@ -4849,7 +4849,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 135.7
+  m_fontSize: 82.7
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5013,7 +5013,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6825251576679094255, guid: e30b226fc1091ad45b58ada6b3f15a5c, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6825251576679094255, guid: e30b226fc1091ad45b58ada6b3f15a5c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -44676,7 +44676,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1057193489}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.63, z: 0}
+  m_LocalPosition: {x: 0.03, y: -0.81, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 549446767}
@@ -44765,7 +44765,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6825251576679094255, guid: e30b226fc1091ad45b58ada6b3f15a5c, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6825251576679094255, guid: e30b226fc1091ad45b58ada6b3f15a5c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -45058,7 +45058,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvasMessage: {fileID: 357061160}
   itemType: 1
-  itemCost: 0
+  itemCost: 30
 --- !u!61 &1460914207
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -45076,7 +45076,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.0666667, y: 1.0666667}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 1.0666667, y: 1.0666667}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -45102,7 +45102,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.0666667, y: 1.0666667}
+    oldSize: {x: 1.28, y: 1.28}
     newSize: {x: 1.0666667, y: 1.0666667}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -45151,7 +45151,7 @@ SpriteRenderer:
   m_SortingLayerID: -1712097461
   m_SortingLayer: -3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3906104238461325921, guid: 93dc9145a09fae041a0b36b7900e617b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 87fc025eeaa37b542b02084bba8f6602, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -45170,7 +45170,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1460914205}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.2, y: -5.66, z: 0}
+  m_LocalPosition: {x: -1.17, y: -5.66, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 357061157}
@@ -45290,7 +45290,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6647432803859290847, guid: 86fc0f44f3aeae643b0fdc8a9769b832, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6647432803859290847, guid: 86fc0f44f3aeae643b0fdc8a9769b832, type: 3}
       propertyPath: m_LocalPosition.x
@@ -47802,7 +47802,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6825251576679094255, guid: e30b226fc1091ad45b58ada6b3f15a5c, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6825251576679094255, guid: e30b226fc1091ad45b58ada6b3f15a5c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -48070,7 +48070,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 184673791883138299, guid: 4fba0f2a113e726408e37612fb4dffe1, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 184673791883138299, guid: 4fba0f2a113e726408e37612fb4dffe1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -48281,7 +48281,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7956888935109504660, guid: 9102b8c16e84f8b4ab43617ccdc3087a, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7956888935109504660, guid: 9102b8c16e84f8b4ab43617ccdc3087a, type: 3}
       propertyPath: m_AnchorMax.x

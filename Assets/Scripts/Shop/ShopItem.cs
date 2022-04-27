@@ -28,6 +28,9 @@ public class ShopItem : MonoBehaviour
                         case ItemType.healthRestore:
                             FindObjectOfType<PlayerHealthHandler>().HealPlayer(25);
                             break;
+                        case ItemType.healthUpgrade:
+                            FindObjectOfType<PlayerHealthHandler>().IncreaseMaxHealth(25);
+                            break;
                     }
                 }
             }
