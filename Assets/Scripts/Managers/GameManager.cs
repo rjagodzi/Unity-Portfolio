@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
         UIManager.instance.UpdateCoinText(currentCoins);
     }
 
-    public void RemoveCoins(int amountToRemove)
+    public void SpendCoins(int amountToRemove)
     {
         currentCoins -= amountToRemove;
 
@@ -35,4 +35,10 @@ public class GameManager : MonoBehaviour
         UIManager.instance.UpdateCoinText(currentCoins);
 
     }
+
+    public int GetCurrentBitCoins()
+    {
+        return currentCoins;
+    }
+
 }
