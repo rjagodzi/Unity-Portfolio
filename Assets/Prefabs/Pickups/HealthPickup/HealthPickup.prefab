@@ -156,4 +156,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 857bf16643bfe5b46a9a363d06d6f7df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBeforePickup: 2
+  timeBeforePickup: 0.5
