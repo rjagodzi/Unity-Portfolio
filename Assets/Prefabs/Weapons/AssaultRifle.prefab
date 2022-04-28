@@ -132,3 +132,5 @@ MonoBehaviour:
   weaponImage: {fileID: 21300000, guid: 8c234cf48bff45540b1688df936903af, type: 3}
   weaponName: Assault Rifle
   weaponSFX: 7
+  weaponPrice: 30
+  weaponShopSprite: {fileID: 21300000, guid: 081dcc8e6b0169e46be1b7fbfdcb6189, type: 3}

@@ -102,6 +102,8 @@ MonoBehaviour:
   weaponImage: {fileID: 21300000, guid: 6b9d2c7762df86047a77481453af7328, type: 3}
   weaponName: Shotgun
   weaponSFX: 9
+  weaponPrice: 20
+  weaponShopSprite: {fileID: 21300000, guid: 19dca52c60ead91438808fe0af54fc14, type: 3}
 --- !u!1 &8863415365969189548
 GameObject:
   m_ObjectHideFlags: 0

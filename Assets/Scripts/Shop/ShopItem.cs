@@ -13,6 +13,26 @@ public class ShopItem : MonoBehaviour
 
     [SerializeField] int itemCost;
 
+    [SerializeField] WeaponsSystem[] potentialWeapon;
+    private WeaponsSystem weaponToBuy;
+
+    [SerializeField] private SpriteRenderer ItemSpriteRenderer;
+    [SerializeField] TMPro.TextMeshProUGUI priceText;
+
+    private void Start()
+    {
+        if(itemType == ItemType.weapon)
+        {
+            int selectedWeapon = Random.Range(0, potentialWeapon.Length);
+            weaponToBuy = potentialWeapon[selectedWeapon];
+
+            itemCost = weaponToBuy.GetWeaponPrice();
+            ItemSpriteRenderer.sprite = weaponToBuy.GetWeaponShopSprite();
+
+            priceText.text = "Buy " + weaponToBuy.GetWeaponName() + ": " + itemCost + " coins";
+        }
+    }
+
     private void Update()
     {
         if (inBuyZone)
@@ -30,6 +50,16 @@ public class ShopItem : MonoBehaviour
                             break;
                         case ItemType.healthUpgrade:
                             FindObjectOfType<PlayerHealthHandler>().IncreaseMaxHealth(25);
+                            AudioManager.instance.PlaySFX(3);
+                            break;
+                        case ItemType.weapon:
+                            PlayerController playerBuying = FindObjectOfType<PlayerController>();
+                            WeaponsSystem weaponToAdd = Instantiate(weaponToBuy, playerBuying.GetWeaponsArm());
+                            playerBuying.AddWeapon(weaponToAdd);
+                            AudioManager.instance.PlaySFX(11);
+                            break;
+                        default:
+                            Debug.Log("No item type was chosen");
                             break;
                     }
                 }

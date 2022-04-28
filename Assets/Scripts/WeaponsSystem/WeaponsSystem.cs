@@ -16,8 +16,10 @@ public class WeaponsSystem : MonoBehaviour
     //creating a method that would take the weaponSFX variable
     //and use it to play a specific SFX track based on the weapon fired
     //was one of my proudest moments during the creation of this game
-    //and it made me realize how much I've learned
     [SerializeField] int weaponSFX;
+
+    [SerializeField] int weaponPrice;
+    [SerializeField] Sprite weaponShopSprite;
 
     // Start is called before the first frame update
     void Start()
@@ -63,6 +65,16 @@ public class WeaponsSystem : MonoBehaviour
     public void PlayWeaponSFX()
     {
         AudioManager.instance.PlaySFX(weaponSFX);
+    }
+
+    public int GetWeaponPrice()
+    {
+        return weaponPrice;
+    }
+
+    public Sprite GetWeaponShopSprite()
+    {
+        return weaponShopSprite;
     }
 
 }
