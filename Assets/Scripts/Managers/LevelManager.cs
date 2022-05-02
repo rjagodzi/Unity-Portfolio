@@ -30,4 +30,14 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene(nextLevel);
     }
 
+    public void ReturnToMainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -47,4 +48,15 @@ public class UIManager : MonoBehaviour
         AudioManager.instance.PlaySFX(5);
         AudioManager.instance.PlayDeathMusic();
     }
+
+    public void ReturnToMainMenu()
+    {
+        LevelManager.instance.ReturnToMainMenu();
+    }
+
+    public void RestartLevel()
+    {
+        LevelManager.instance.RestartLevel();
+    }
+
 }
