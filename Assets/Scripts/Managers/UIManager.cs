@@ -21,6 +21,8 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI coinText;
 
+    [SerializeField] GameObject pauseMenu;
+
     private void Awake()
     {
         instance = this;  
@@ -57,6 +59,11 @@ public class UIManager : MonoBehaviour
     public void RestartLevel()
     {
         LevelManager.instance.RestartLevel();
+    }
+
+    public void TurnPauseMenuOnOff(bool onOff)
+    {
+        pauseMenu.SetActive(onOff);
     }
 
 }
