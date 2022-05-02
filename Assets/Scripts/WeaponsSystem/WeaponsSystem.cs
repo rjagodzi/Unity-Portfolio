@@ -30,7 +30,12 @@ public class WeaponsSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        FiringBullets();
+        if (LevelManager.instance.IsGamePaused())
+        {
+            return;
+        }
+
+        FiringBullets();       
     }
 
     private void FiringBullets()

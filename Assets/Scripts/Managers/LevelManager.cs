@@ -56,16 +56,20 @@ public class LevelManager : MonoBehaviour
         {
             UIManager.instance.TurnPauseMenuOnOff(true);
             gameIsPaused = true;
+
+            Time.timeScale = 0f;
         }
         else
         {
 
             UIManager.instance.TurnPauseMenuOnOff(false);
             gameIsPaused = false;
+
+            Time.timeScale = 1f;
         }
     }
 
-    public bool IsGamePasued()
+    public bool IsGamePaused()
     {
         return gameIsPaused;
     }
