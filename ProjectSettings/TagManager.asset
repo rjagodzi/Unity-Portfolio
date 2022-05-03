@@ -21,7 +21,7 @@ TagManager:
   - RoomLayer
   - TrapLayer
   - Pickup
-  - 
+  - Boss
   - 
   - 
   - 
@@ -50,6 +50,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 2582869835
+    locked: 0
+  - name: Boss
+    uniqueID: 3255147937
     locked: 0
   - name: Guns
     uniqueID: 144876269
