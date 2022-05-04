@@ -5,7 +5,13 @@ using UnityEngine;
 public class BossController : MonoBehaviour
 {
     private Transform playerToChase;
-    public bool isFlipped = false;
+    private bool isFlipped = false;
+
+    [SerializeField] int damageAmount = 35;
+    [SerializeField] Transform pointOfAttack;
+
+    [SerializeField] float attackRadius;
+    [SerializeField] LayerMask whatIsPlayer;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +37,22 @@ public class BossController : MonoBehaviour
             transform.Rotate(0f, 180f, 0f);
             isFlipped = true;
         }
+    }
+
+    public void AttackPlayer()
+    {
+        Collider2D playerToAttack = Physics2D.OverlapCircle(pointOfAttack.position, attackRadius, whatIsPlayer);
+
+        if(playerToAttack != null)
+        {
+            playerToAttack.GetComponent<PlayerHealthHandler>().DamagePlayer(damageAmount);
+        }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(pointOfAttack.position, attackRadius);
     }
 
 }
