@@ -43676,9 +43676,10 @@ GameObject:
   - component: {fileID: 1841908848}
   - component: {fileID: 1841908850}
   - component: {fileID: 1841908851}
+  - component: {fileID: 1841908852}
   m_Layer: 0
   m_Name: SkellyBoss
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43784,8 +43785,8 @@ BoxCollider2D:
   m_Offset: {x: -0.44903862, y: -2.100859}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.6554878, y: 0.5}
-    oldSize: {x: 4.6857142, y: 5.4857144}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.2, y: 5.2}
     newSize: {x: 2.24, y: 3.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -43810,8 +43811,8 @@ BoxCollider2D:
   m_Offset: {x: -0.56129813, y: -0.30470467}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.6554878, y: 0.5}
-    oldSize: {x: 4.6857142, y: 5.4857144}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.2, y: 5.2}
     newSize: {x: 2.24, y: 3.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -43861,6 +43862,20 @@ MonoBehaviour:
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &1841908852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841908844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29ce7b023792e4b43b98bfec692988ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossMaxHealth: 50
+  bossCurrentHealth: 0
 --- !u!1 &1845025483
 GameObject:
   m_ObjectHideFlags: 0

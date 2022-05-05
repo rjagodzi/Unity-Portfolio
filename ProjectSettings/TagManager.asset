@@ -8,6 +8,7 @@ TagManager:
   - PlayerBullet
   - BreakableObject
   - Pickup
+  - Boss
   layers:
   - Default
   - TransparentFX

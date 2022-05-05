@@ -7,7 +7,7 @@ public class PlayerBulletController : MonoBehaviour
     [SerializeField] GameObject bulletImpactEffect;
     [SerializeField] GameObject[] damageEffects;
     [SerializeField] float bulletSpeed = 5f;
-    [SerializeField] int damageAmmount = 10;
+    [SerializeField] int damageAmount = 10;
 
     private Rigidbody2D bulletRigidbody;
     
@@ -30,11 +30,8 @@ public class PlayerBulletController : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            int randomSplash = Random.Range(0, damageEffects.Length);
-            AudioManager.instance.PlaySFX(1);
-
-            Instantiate(damageEffects[randomSplash], transform.position, transform.rotation);
-            collision.GetComponent<EnemyController>().DamageEnemy(damageAmmount);
+            InstantiateBloodSplatter();
+            collision.GetComponent<EnemyController>().DamageEnemy(damageAmount);
         }
         else if (collision.gameObject.CompareTag("BreakableObject"))
         {
@@ -49,6 +46,10 @@ public class PlayerBulletController : MonoBehaviour
                     collision.GetComponent<ItemDropper>().DropItem();
                 }
             }
+        }else if (collision.CompareTag("Boss"))
+        {
+            InstantiateBloodSplatter();
+            collision.GetComponent<BossHealthHandler>().DamageBoss(damageAmount);
         }
         else
         {
@@ -56,5 +57,13 @@ public class PlayerBulletController : MonoBehaviour
         }
         
         Destroy(gameObject);
+    }
+
+    private void InstantiateBloodSplatter()
+    {
+        int randomSplash = Random.Range(0, damageEffects.Length);
+        AudioManager.instance.PlaySFX(1);
+
+        Instantiate(damageEffects[randomSplash], transform.position, transform.rotation);
     }
 }
