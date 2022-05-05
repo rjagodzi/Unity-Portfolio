@@ -43784,8 +43784,8 @@ BoxCollider2D:
   m_Offset: {x: -0.44903862, y: -2.100859}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.2, y: 5.2}
+    pivot: {x: 0.6554878, y: 0.5}
+    oldSize: {x: 4.6857142, y: 5.4857144}
     newSize: {x: 2.24, y: 3.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -43810,8 +43810,8 @@ BoxCollider2D:
   m_Offset: {x: -0.56129813, y: -0.30470467}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.2, y: 5.2}
+    pivot: {x: 0.6554878, y: 0.5}
+    oldSize: {x: 4.6857142, y: 5.4857144}
     newSize: {x: 2.24, y: 3.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -43854,8 +43854,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 35
+  angryDamageAmount: 50
   pointOfAttack: {fileID: 2093084845}
   attackRadius: 1.64
+  angryAttackRadius: 3
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 64

@@ -8,9 +8,11 @@ public class BossController : MonoBehaviour
     private bool isFlipped = false;
 
     [SerializeField] int damageAmount = 35;
+    [SerializeField] int angryDamageAmount = 50;
     [SerializeField] Transform pointOfAttack;
 
     [SerializeField] float attackRadius;
+    [SerializeField] float angryAttackRadius;
     [SerializeField] LayerMask whatIsPlayer;
 
     // Start is called before the first frame update
@@ -46,6 +48,16 @@ public class BossController : MonoBehaviour
         if(playerToAttack != null)
         {
             playerToAttack.GetComponent<PlayerHealthHandler>().DamagePlayer(damageAmount);
+        }
+    }
+
+    public void AngryAttackPlayer()
+    {
+        Collider2D playerToAttack = Physics2D.OverlapCircle(pointOfAttack.position, angryAttackRadius, whatIsPlayer);
+
+        if (playerToAttack != null)
+        {
+            playerToAttack.GetComponent<PlayerHealthHandler>().DamagePlayer(angryDamageAmount);
         }
     }
 
