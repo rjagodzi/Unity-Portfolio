@@ -12,10 +12,13 @@ public class Boss_Walk : StateMachineBehaviour
     public float speed = 2.5f;
     public float attackRange = 3f;
 
+    [SerializeField] float shotCounter = 5;
+    [SerializeField] float shootTime;
+
     //OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        playerToChase = GameObject.FindObjectOfType<PlayerController>().transform;
+        playerToChase = FindObjectOfType<PlayerController>().transform;
         bossRigidBody = animator.GetComponent<Rigidbody2D>();
     }
 
@@ -30,11 +33,20 @@ public class Boss_Walk : StateMachineBehaviour
         {
             animator.SetTrigger("Attack");
         }
+
+        shotCounter -= Time.fixedDeltaTime;
+        if(shotCounter <= 0)
+        {
+            animator.SetTrigger("Shoot");
+        }
+
     }
 
     //OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.ResetTrigger("Attack");
+        animator.ResetTrigger("Shoot");
+        shotCounter = shootTime;
     }
 }

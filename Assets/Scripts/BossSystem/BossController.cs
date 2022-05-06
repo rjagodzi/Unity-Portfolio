@@ -15,6 +15,11 @@ public class BossController : MonoBehaviour
     [SerializeField] float angryAttackRadius;
     [SerializeField] LayerMask whatIsPlayer;
 
+    [SerializeField] Transform[] shootingPoints;
+    [SerializeField] Transform[] angryShootingPoints;
+
+    [SerializeField] GameObject bossBullet;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -58,6 +63,22 @@ public class BossController : MonoBehaviour
         if (playerToAttack != null)
         {
             playerToAttack.GetComponent<PlayerHealthHandler>().DamagePlayer(angryDamageAmount);
+        }
+    }
+
+    public void ShootingPlayer()
+    {
+        foreach(Transform point in shootingPoints)
+        {
+            Instantiate(bossBullet, point.position, point.rotation);
+        }
+    }
+
+    public void AngryShootingPlayer()
+    {
+        foreach (Transform point in angryShootingPoints)
+        {
+            Instantiate(bossBullet, point.position, point.rotation);
         }
     }
 
