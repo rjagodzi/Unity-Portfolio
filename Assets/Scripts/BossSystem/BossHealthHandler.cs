@@ -8,6 +8,8 @@ public class BossHealthHandler : MonoBehaviour
     [SerializeField] int bossMaxHealth = 500;
     public int bossCurrentHealth;
 
+    private bool isInvincible = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +24,11 @@ public class BossHealthHandler : MonoBehaviour
 
     public void DamageBoss(int damageTaken)
     {
+        if (isInvincible)
+        {
+            return;
+        }
+
         bossCurrentHealth -= damageTaken;
 
         if(bossCurrentHealth <= bossMaxHealth / 2)
@@ -33,6 +40,23 @@ public class BossHealthHandler : MonoBehaviour
         {
             GetComponent<Animator>().SetTrigger("Die");
         }
+    }
+
+
+
+    public int GetBossMaxHealth()
+    {
+        return bossMaxHealth;
+    }
+
+    public int GetBossCurrentHealth()
+    {
+        return bossCurrentHealth;
+    }
+
+    public void SetTheBossInvincible(bool isBossInvincible)
+    {
+        isInvincible = isBossInvincible;
     }
 
     public void DestroyTheBoss()
