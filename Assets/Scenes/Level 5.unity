@@ -46628,7 +46628,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -2.4417064, y: -9.208904}
+  m_Offset: {x: 5.926939, y: -9.208904}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -46639,7 +46639,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 12.446299, y: 16.124424}
+  m_Size: {x: 29.18359, y: 16.124424}
   m_EdgeRadius: 0
 --- !u!1 &1337319028
 GameObject:
@@ -46915,7 +46915,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6647432803859290834, guid: 86fc0f44f3aeae643b0fdc8a9769b832, type: 3}
       propertyPath: levelToLoad
-      value: Level 2
+      value: BossRoom
       objectReference: {fileID: 0}
     - target: {fileID: 6647432803859290845, guid: 86fc0f44f3aeae643b0fdc8a9769b832, type: 3}
       propertyPath: m_Name
