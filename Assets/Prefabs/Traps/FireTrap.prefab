@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1172765144992109592}
   - component: {fileID: 1172765144992109599}
   - component: {fileID: 1172765144992109595}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FireTrap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142,5 +142,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3298227933ebb134bb4e6941749d55e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 50
+  damageAmount: 15
   shouldDamagePlayer: 0

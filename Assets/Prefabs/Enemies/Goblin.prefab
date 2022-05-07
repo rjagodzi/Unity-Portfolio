@@ -70,7 +70,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -324349543
-  m_SortingLayer: -4
+  m_SortingLayer: -5
   m_SortingOrder: 0
   m_Sprite: {fileID: 4723107735738678597, guid: e99e45bbed5d5284aad0c9e0612fa7cd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -151,17 +151,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpeed: 3
-  enemyHealth: 25
-  shootPlayerRange: 3.33
+  enemyHealth: 30
+  shootPlayerRange: 10
   shouldChasePlayer: 1
-  playerChaseRange: 4.34
+  playerChaseRange: 4.39
   playerKeepChasingRange: 5.43
   shouldRunAway: 0
   runawayRange: 0
-  shouldWander: 1
-  wanderLength: 2
+  shouldWander: 0
+  wanderLength: 2.42
   pauseLength: 2
-  shouldPatrol: 0
+  shouldPatrol: 1
   patrolPoints: []
   meleeAttack: 0
   enemyProjectile: {fileID: 4022196329181533823, guid: 507da1c8a57ff2a418953bc9949f1656, type: 3}

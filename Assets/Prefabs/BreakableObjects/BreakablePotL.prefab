@@ -169,6 +169,7 @@ MonoBehaviour:
   - {fileID: 4865705140581146380, guid: aec542638e61c22458f1c60eb8110ab8, type: 3}
   - {fileID: 764969247293993025, guid: ca2080f49e9357b43b31b10d6b119bd9, type: 3}
   - {fileID: 1163179986593658245, guid: e5e9b3c0a11686c4798fcfad3d8805fa, type: 3}
+  sfxNumberToPlay: 0
 --- !u!114 &825674891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,4 +185,4 @@ MonoBehaviour:
   dropsItems: 1
   itemsToDrop:
   - {fileID: 3126835168344338944, guid: 5b0a514086a3bbd4f9c972bdbf5f076b, type: 3}
-  itemDropChance: 1
+  itemDropChance: 0.5

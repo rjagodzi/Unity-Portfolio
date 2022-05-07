@@ -48,12 +48,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d04828679ba13d745bc0af7f06e51f01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeed: 2
-  enemyHealth: 30
-  shootPlayerRange: 4.8
+  enemySpeed: 3
+  enemyHealth: 40
+  shootPlayerRange: 10.05
   shouldChasePlayer: 1
-  playerChaseRange: 0
-  playerKeepChasingRange: 0
+  playerChaseRange: 11.22
+  playerKeepChasingRange: 12.46
   shouldRunAway: 0
   runawayRange: 0
   shouldWander: 0
@@ -229,7 +229,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -324349543
-  m_SortingLayer: -4
+  m_SortingLayer: -5
   m_SortingOrder: 0
   m_Sprite: {fileID: 4723107735738678597, guid: 38fc773c7f191074c9a0df94a162bf96, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
