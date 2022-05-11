@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LevelExit : MonoBehaviour
 {
-    [SerializeField] string levelToLoad;
+    [SerializeField] int levelToLoad;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

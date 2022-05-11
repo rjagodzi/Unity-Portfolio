@@ -15,6 +15,7 @@ public class WaveSpawnerManager : MonoBehaviour
     private enum SpawningStates { Spawning, Waiting, Counting}
     private SpawningStates state;
     [SerializeField] Transform[] spawnPoints;
+    private bool wavesComplete = false;
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +31,6 @@ public class WaveSpawnerManager : MonoBehaviour
         {
             if (!EnemiesAreAlive())
             {
-                Debug.Log("Wave Complete!");
                 StartNewWave();
             }
             else
@@ -39,16 +39,20 @@ public class WaveSpawnerManager : MonoBehaviour
             }
         }
 
-        if(waveCountdown <= 0)
+        if (!wavesComplete)
         {
-            if(state != SpawningStates.Spawning)
+            if(waveCountdown <= 0)
             {
-                StartCoroutine(SpawnWave(waves[nextWave]));
+                if(state != SpawningStates.Spawning)
+                {
+                    StartCoroutine(SpawnWave(waves[nextWave]));
+                }
             }
-        }
-        else
-        {
-            waveCountdown -= Time.deltaTime;
+            else
+            {
+                waveCountdown -= Time.deltaTime;
+            }
+
         }
     }
 
@@ -99,9 +103,8 @@ public class WaveSpawnerManager : MonoBehaviour
 
         if(nextWave + 1 == waves.Length)
         {
-            Debug.Log("We've completed all the waves");
-
-            // here we can open doors
+            wavesComplete = true;
+            LevelManager.instance.LevelPicker();
         }
         else
         {
