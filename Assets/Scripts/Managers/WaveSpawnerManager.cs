@@ -27,33 +27,33 @@ public class WaveSpawnerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(state == SpawningStates.Waiting)
-        {
-            if (!EnemiesAreAlive())
-            {
-                StartNewWave();
-            }
-            else
-            {
-                return;
-            }
-        }
+        //if(state == SpawningStates.Waiting)
+        //{
+        //    if (!EnemiesAreAlive())
+        //    {
+        //        StartNewWave();
+        //    }
+        //    else
+        //    {
+        //        return;
+        //    }
+        //}
 
-        if (!wavesComplete)
-        {
-            if(waveCountdown <= 0)
-            {
-                if(state != SpawningStates.Spawning)
-                {
-                    StartCoroutine(SpawnWave(waves[nextWave]));
-                }
-            }
-            else
-            {
-                waveCountdown -= Time.deltaTime;
-            }
+        //if (!wavesComplete)
+        //{
+        //    if(waveCountdown <= 0)
+        //    {
+        //        if(state != SpawningStates.Spawning)
+        //        {
+        //            StartCoroutine(SpawnWave(waves[nextWave]));
+        //        }
+        //    }
+        //    else
+        //    {
+        //        waveCountdown -= Time.deltaTime;
+        //    }
 
-        }
+        //}
     }
 
     IEnumerator SpawnWave(Wave waveToSpawn)
@@ -95,22 +95,22 @@ public class WaveSpawnerManager : MonoBehaviour
             return true;        
     }
 
-    void StartNewWave()
-    {
-        state = SpawningStates.Counting;
+    //void StartNewWave()
+    //{
+    //    state = SpawningStates.Counting;
 
-        waveCountdown = timeBetweenWaves;
+    //    waveCountdown = timeBetweenWaves;
 
-        if(nextWave + 1 == waves.Length)
-        {
-            wavesComplete = true;
-            LevelManager.instance.LevelPicker();
-        }
-        else
-        {
-            nextWave++;
-        }
-    }
+    //    if(nextWave + 1 == waves.Length)
+    //    {
+    //        wavesComplete = true;
+    //        LevelManager.instance.LevelPicker();
+    //    }
+    //    else
+    //    {
+    //        nextWave++;
+    //    }
+    //}
 
 }
 

@@ -132,7 +132,7 @@ MonoBehaviour:
   playerChaseRange: 5.34
   playerKeepChasingRange: 4.81
   shouldRunAway: 1
-  runawayRange: 8.37
+  runawayRange: 6.78
   shouldWander: 0
   wanderLength: 0
   pauseLength: 0

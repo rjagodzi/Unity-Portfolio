@@ -47133,7 +47133,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6647432803859290834, guid: 86fc0f44f3aeae643b0fdc8a9769b832, type: 3}
       propertyPath: levelToLoad
-      value: VictoryScreen
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6647432803859290845, guid: 86fc0f44f3aeae643b0fdc8a9769b832, type: 3}
       propertyPath: m_Name
